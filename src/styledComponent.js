@@ -1,9 +1,15 @@
 import styled from "styled-components";
 import background from "./images/background.png";
 
-// 가운데 정렬을 위한 가장 바깥쪽 div
+// 메인 화면 외에 여백은 검게 처리하기 위한 가장 바깥쪽 div
+export const AppContainer = styled.div`
+  background-color: black;
+`;
+
+// 가운데 정렬을 위한 바깥쪽 div
 export const OuterDiv = styled.div`
-  width: 100%;
+  width: 425px;
+  margin: 0 auto;
   text-align: center;
   background-color: black;
   background-image: url(${background});
