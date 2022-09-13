@@ -16,7 +16,7 @@ $ npm start
 구조
 
 - src안의 pages폴더에 페이지 구성요소를 담은 jsx파일들 존재
-- 페이지에 상관없이 Header와 Footer은 항상 출력되고, 
+- 페이지에 상관없이 Header와 Footer은 항상 출력되고,
 - 홈화면의 요소들은 Home.jsx에 구현되며, 나머지는 각각의 jsx에 구현
 - 축제의 모든 data들은 data.js에 구현되어있고, 필요한 형식대로 수정해서 사용하면 됨
 - 공통적으로 사용되는 method들은 utils.js에 구현되어있음.
