@@ -43,7 +43,7 @@ export const dayOnClick = (setSelectedDay, e) => {
     if (d === e.target) {
       d.style.color = "red";
     } else {
-      d.style.color = "black";
+      d.style.color = "white";
     }
   }
 };
@@ -56,16 +56,37 @@ export const getDefaultDay = () => {
 };
 
 // 플리, 푸드트럭, 공연일정의 data들을 data.js에서 받아 추가해주는 method
-// 필요에 따라 변경해서 사용하면 될듯
-export const getData = (datas, selectedDay) => {
+// 각 페이지마다 다른 Element구성을 가지고 있으므로, Element를 받고, 데이터와 modal 기능을 수행하도록 넘겨준다.
+export const pushData = (
+  datas,
+  Element,
+  selectedDay,
+  setShowModal,
+  setSelectedID
+) => {
   let result = [];
-  let i = 0;
   for (let data of datas) {
-    if (dayConverter(data.day) === selectedDay) {
-      result.push(<div key={i}>{data.name}</div>);
-      i++;
+    if (dayConverter(data.day) === selectedDay || selectedDay === "") {
+      result.push(
+        <Element
+          key={data.id}
+          data={data}
+          setShowModal={setShowModal}
+          setSelectedID={setSelectedID}
+        >
+          {data.name}
+        </Element>
+      );
     }
   }
 
   return result;
+};
+// prop으로 넘어온 id에 해당하는 data를 주어진 datas에서 찾아 반환
+export const findData = (datas, id) => {
+  for (let data of datas) {
+    if (data.id === id) {
+      return data;
+    }
+  }
 };

@@ -51,6 +51,13 @@ export const schedules = [
     day: 5,
     detail: "디테일한 설명은 생략한다.",
   },
+  {
+    id: 6,
+    name: "캔드릭 라마",
+    date: "9.20",
+    day: 2,
+    detail: "디테일한 설명은 생략한다.",
+  },
 ];
 
 export const foods = [

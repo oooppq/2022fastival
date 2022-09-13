@@ -1,12 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { HeaderDiv, HeaderLogo, Nav, FlexUl, Li } from "../styledComponent";
+import logo from "../images/header-logo.png";
 
 const Header = () => {
   // nav의 요소들을 클릭하면 각각의 url로 navigate
   const navigate = useNavigate();
   const navOnClick = (e) => {
-    if (e.target.tagName === "DIV") {
+    if (e.target.tagName === "IMG") {
       navigate("/");
     } else {
       const text = e.target.innerText;
@@ -54,7 +55,7 @@ const Header = () => {
 
   return (
     <HeaderDiv>
-      <HeaderLogo onClick={navOnClick}>지금우리서강은</HeaderLogo>
+      <HeaderLogo onClick={navOnClick} src={logo}></HeaderLogo>
       <Nav>
         <FlexUl>
           <NavLi text="플리마켓/마당" onClick={navOnClick}></NavLi>
