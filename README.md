@@ -1,7 +1,9 @@
 개발환경 세팅
 
 $ git clone https://github.com/oooppq/2022fastival.git
+
 $ npm install
+
 $ npm start
 
 진행상황
