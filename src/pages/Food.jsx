@@ -1,45 +1,32 @@
 import React, { useState } from "react";
-import { dayConverter, foods } from "../data";
-import { DayContainerDiv, DayDiv } from "../styledComponent";
+import { foods } from "../data";
+import { DayContainerDiv } from "../styledComponent";
+import {
+  dayConverter,
+  pushDayDiv,
+  dayOnClick,
+  getDefaultDay,
+  getData,
+} from "../utils";
 
-let today = new Date().getDay();
-let defaultDay = today > 2 ? today : 2;
+// default로 설정할 요일을 지정
+let defaultDay = getDefaultDay();
 
 const Food = () => {
+  // 요일 선택을 반영하기 위해 useState로 구현
   const [selectedDay, setSelectedDay] = useState(dayConverter(defaultDay));
-  const dayOnClick = (e) => {
-    setSelectedDay(e.target.innerHTML);
-    let days = e.target.parentNode.childNodes;
-    for (let d of days) {
-      if (d === e.target) {
-        d.style.color = "red";
-      } else {
-        d.style.color = "black";
-      }
-    }
-  };
 
-  const getFoods = () => {
-    let foodList = [];
-    let i = 0;
-    for (let food of foods) {
-      if (dayConverter(food.day) === selectedDay) {
-        foodList.push(<div key={i}>{food.name}</div>);
-        i++;
-      }
-    }
-    return foodList;
-  };
   return (
     <>
       <DayContainerDiv>
-        <DayDiv onClick={dayOnClick}>월</DayDiv>
-        <DayDiv onClick={dayOnClick}>화</DayDiv>
-        <DayDiv onClick={dayOnClick}>수</DayDiv>
-        <DayDiv onClick={dayOnClick}>목</DayDiv>
-        <DayDiv onClick={dayOnClick}>금</DayDiv>
+        {/* 요일을 추가, onclick event는 parameter 전달을 위해 화살표 함수로 구현 */}
+        {pushDayDiv(selectedDay, (e) => {
+          dayOnClick(setSelectedDay, e);
+        })}
       </DayContainerDiv>
-      {getFoods()}
+
+      {/* 데이터 추가 */}
+      {getData(foods, selectedDay)}
     </>
   );
 };

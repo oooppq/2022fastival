@@ -1,5 +1,4 @@
 import React from "react";
-// import { Reset } from "styled-reset";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./pages/Header";
 import Footer from "./pages/Footer";
@@ -11,10 +10,10 @@ import Schedule from "./pages/Schedule";
 const App = () => {
   return (
     <Router>
-      {/* <Reset /> */}
-
+      {/* logo, nav를 포함한 header */}
       <Header />
 
+      {/* 각각의 페이지로 라우팅 */}
       <Routes>
         <Route path="/" element={<Home />}></Route>
 
@@ -27,6 +26,7 @@ const App = () => {
         <Route path="/schedule" element={<Schedule />}></Route>
       </Routes>
 
+      {/* 크레딧을 위한 footer */}
       <Footer />
     </Router>
   );
