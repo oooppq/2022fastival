@@ -119,3 +119,44 @@ export const ModalInnerDiv = styled.div`
   border: 1px solid white;
   border-radius: 5px;
 `;
+
+
+//푸드트럭
+
+
+export const FoodMap = styled.div`
+width: 345px;
+height: 400px;
+background: white;
+margin: 0 auto;
+`
+export const FoodCard = styled.div`
+height: 74px;
+width: 345px;
+left: 35px;
+top: 600px;
+border-radius: 10px;
+display: flex;
+align-items: center;
+background-color: white;
+color: black;
+margin: 0 auto;
+`
+
+export const FoodCardNumber = styled.div`
+margin-left: 19px;
+margin-right: 16px;
+height: 40px;
+width: 40px;
+border-radius: 4px;
+background-color:  #A30000;
+color: white;
+display: flex;
+justify-content: center;
+align-items: center;
+`
+
+export const FoodCardDetail = styled.div`
+margin-left: 148px;
+color: black;
+`

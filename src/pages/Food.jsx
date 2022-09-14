@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { foods } from "../data";
 import Modal from "./Modal";
-import { DayContainerDiv } from "../styledComponent";
+import { DayContainerDiv, FoodCard, FoodMap } from "../styledComponent";
 import {
   dayConverter,
   pushDayDiv,
@@ -28,8 +28,10 @@ const Food = () => {
           dayOnClick(setSelectedDay, e);
         })}
       </DayContainerDiv>
-
+      <FoodMap></FoodMap>
       {/* 데이터 추가 */}
+      
+      
       {pushData(
         foods,
         FoodComponentDiv,
@@ -37,6 +39,10 @@ const Food = () => {
         setShowModal,
         setSelectedID
       )}
+      
+      
+     
+      
       {showModal && (
         <Modal
           setShowModal={setShowModal}
