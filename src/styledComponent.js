@@ -99,7 +99,7 @@ export const DayContainerDiv = styled.div`
 `;
 
 export const DayDiv = styled.div`
-  margin: 1px;
+  margin: 10px;
 `;
 
 // 모달 포지셔닝을 위한 divs
@@ -123,6 +123,7 @@ export const ModalInnerDiv = styled.div`
   border: 1px solid white;
   border-radius: 5px;
 `;
+
 //공연일정 divs
 export const MainScheduleDiv = styled.div`
   background-color:black;
@@ -133,6 +134,7 @@ export const ScheduleContainerDIv = styled.div`
 `;
 export const ScheduleSpan = styled.div`
   text-align:center;
+  font-size: 20px;
 `;
 
 export const ScheduleimgBox = styled.div`
@@ -147,17 +149,25 @@ export const Scheduleimg = styled.div`
   justify-content:center;
   width: 250px;
   height: 240px;
-  margin:30px 0;
+  margin:15px 0;
   border: 2px solid #FFFFFF;
+
 `;
+
 export const Schedulenametag = styled.div`
+
+  font-family: ChosunGs;
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 20px;
   width:140px;
   height:55px;
+  color: rgba(255,255,255, 0.9);
   display:flex;
   justify-content:center;
   align-items:center;
   background-image: url(${nametag});
   background-repeat:no-repeat;
   position:relative;
-  top:210px;
+  top:-40px;
 `;

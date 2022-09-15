@@ -69,11 +69,13 @@ export const ScheduleComponentDiv = (props) => {
       }}
     >
 
+      {/* 날짜 */}
       <p>{content}</p>
       <ScheduleimgBox>
         <Scheduleimg>
-          <Schedulenametag>{props.data.name} </Schedulenametag>
+          <img src={props.data.backgroundImage} alt="backgroundImage" width="100%"/>
         </Scheduleimg>
+        <Schedulenametag>{props.data.name} </Schedulenametag>
       </ScheduleimgBox>
 
 

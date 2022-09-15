@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { schedules } from "../data";
-import Modal from "./Modal";
+// import Modal from "./Modal";
 import { DayContainerDiv, MainScheduleDiv, ScheduleContainerDIv, ScheduleSpan, Scheduleimg, ScheduleimgBox, Schedulenametag } from "../styledComponent";
 import { ScheduleComponentDiv } from "./Elements";
 import {
@@ -30,25 +30,25 @@ const Schedule = () => {
       </DayContainerDiv>
       <ScheduleContainerDIv>
         <ScheduleSpan>Performance Schedule</ScheduleSpan>
-
       </ScheduleContainerDIv>
       {/* 데이터 추가 */}
 
-      {showModal && (
+      
+      {/* {showModal && (
         <Modal
           setShowModal={setShowModal}
           data={findData(schedules, selectedID)}
         ></Modal>
-      )}
-      {pushData(
+      )} */}
+
+
+       {pushData(
         schedules,
         ScheduleComponentDiv,
         selectedDay,
         setShowModal,
-        setSelectedID
+        setSelectedID,
       )}
-
-
     </MainScheduleDiv>
   );
 };

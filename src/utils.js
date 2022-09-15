@@ -2,20 +2,20 @@ import { DayDiv } from "./styledComponent";
 
 // 숫자로 표현된 day를 문자로 바꿔주는 method
 export const dayConverter = (num) => {
-  let arr = ["일", "월", "화", "수", "목", "금", "토"];
+  let arr = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   return arr[num];
 };
 
 // 각각의 페이지에 요일 component를 추가해주는 method
 export const pushDayDiv = (selectedDay, onClick) => {
-  let dayList = ["월", "화", "수", "목", "금"];
+  let dayList = ["Thu", "Fri"];
   let result = [];
   let i = 0;
   for (let day of dayList) {
     if (day === selectedDay) {
       result.push(
         <DayDiv
-          style={{ color: "red" }}
+          style={{ color: "red"}}
           className="day"
           key={i}
           onClick={onClick}
@@ -25,7 +25,10 @@ export const pushDayDiv = (selectedDay, onClick) => {
       );
     } else {
       result.push(
-        <DayDiv className="day" key={i} onClick={onClick}>
+        <DayDiv 
+          className="day" 
+          key={i} 
+          onClick={onClick}>
           {day}
         </DayDiv>
       );
