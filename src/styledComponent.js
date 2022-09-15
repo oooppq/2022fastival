@@ -137,6 +137,7 @@ left: 35px;
 top: 600px;
 border-radius: 10px;
 display: flex;
+justify-content: space-around;
 align-items: center;
 background-color: white;
 color: black;
@@ -144,8 +145,6 @@ margin: 0 auto;
 `
 
 export const FoodCardNumber = styled.div`
-margin-left: 19px;
-margin-right: 16px;
 height: 40px;
 width: 40px;
 border-radius: 4px;
@@ -156,7 +155,48 @@ justify-content: center;
 align-items: center;
 `
 
+export const FoodCardName = styled.div`
+color: black;
+width: 150px;
+text-align: start;
+`
 export const FoodCardDetail = styled.div`
-margin-left: 148px;
+width: 50;
 color: black;
 `
+
+export const FoodModalPopup = styled.div`
+height: 541px;
+width: 317px;
+left: 51px;
+top: 186px;
+border-radius: 7px;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+border: 1px solid white;
+background-color: black;
+`
+
+export const FoodImg = styled.div`
+height: 218px;
+width: 243px;
+left: 88px;
+top: 246px;
+border-radius: 3px;
+background-color: white;
+margin: 0 auto;
+margin-top: 60px;
+`
+
+export const FoodName = styled.div`
+height: 26px;
+width: 102px;
+left: 157px;
+top: 460px;
+border-radius: nullpx;
+color: white;
+
+`
+

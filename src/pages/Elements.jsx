@@ -6,6 +6,7 @@ import {
   FoodCard,
   FoodCardNumber,
   FoodCardDetail,
+  FoodCardName,
 } from "../styledComponent";
 
 export const EventComponentDiv = (props) => {
@@ -47,8 +48,8 @@ export const FoodComponentDiv = (props) => {
         props.setSelectedID(props.data.id);
       }}
     >
-      <FoodCardNumber><p>{props.data.id}</p></FoodCardNumber>
-      {props.data.name}
+      <FoodCardNumber><div>{props.data.id}</div></FoodCardNumber>
+      <FoodCardName>{props.data.name}</FoodCardName>
       <FoodCardDetail>자세히</FoodCardDetail>
     </FoodCard>
   );

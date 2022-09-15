@@ -11,6 +11,7 @@ import {
   findData,
 } from "../utils";
 import { FoodComponentDiv } from "./Elements";
+import FoodModal from "./FoodModal";
 
 // default로 설정할 요일을 지정
 let defaultDay = getDefaultDay();
@@ -44,10 +45,10 @@ const Food = () => {
      
       
       {showModal && (
-        <Modal
+        <FoodModal
           setShowModal={setShowModal}
           data={findData(foods, selectedID)}
-        ></Modal>
+        ></FoodModal>
       )}
     </>
   );
