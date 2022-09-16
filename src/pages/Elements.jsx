@@ -48,9 +48,11 @@ export const FoodComponentDiv = (props) => {
         props.setSelectedID(props.data.id);
       }}
     >
-      <FoodCardNumber><div>{props.data.id}</div></FoodCardNumber>
+      <FoodCardNumber>
+        <div>{props.data.id}</div>
+      </FoodCardNumber>
       <FoodCardName>{props.data.name}</FoodCardName>
-      <FoodCardDetail>자세히</FoodCardDetail>
+      <FoodCardDetail>+</FoodCardDetail>
     </FoodCard>
   );
 };

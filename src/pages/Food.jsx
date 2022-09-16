@@ -30,6 +30,7 @@ const Food = () => {
   const [selectedID, setSelectedID] = useState(1);
   return (
     <>
+      <div style={{ textAlign: "right" }}>9.19~23 동일</div>
       <div style={{ position: "relative" }}>
         <FoodMap src={foodmap}></FoodMap>
         <FoodMapContainer>

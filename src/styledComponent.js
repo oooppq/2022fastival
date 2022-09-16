@@ -28,7 +28,7 @@ export const HeaderDiv = styled.div`
 
 export const HeaderLogo = styled.img`
   text-align: center;
-  padding: 40px 30px 20px 30px;
+  padding: 40px 30px 0px 30px;
   max-width: 100%;
 `;
 
@@ -59,6 +59,7 @@ export const FlexUl = styled.ul`
 `;
 
 export const Li = styled.li`
+  padding: 20px 3px;
   width: 115px;
 `;
 

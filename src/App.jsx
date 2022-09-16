@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./pages/Header";
+import TestHeader from "./pages/TestHeader";
 import Footer from "./pages/Footer";
 import Home from "./pages/Home";
 import Flea from "./pages/Flea";
@@ -14,7 +14,7 @@ const App = () => {
       <AppContainer>
         <OuterDiv>
           {/* logo, nav를 포함한 header */}
-          <Header />
+          <TestHeader />
 
           {/* 각각의 페이지로 라우팅 */}
           <Routes>
