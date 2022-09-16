@@ -11,4 +11,8 @@ export default createGlobalStyle`
     body {
         font-family: 'EF_WAKEUP'
     }
+
+    * {
+        box-sizing : border-box;
+    }
 `;

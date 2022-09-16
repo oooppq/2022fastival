@@ -1,27 +1,27 @@
 import {
   MainDiv,
   DdayDiv,
-  DdayTitle,
-  DdayTimer,
   EventContainerDiv,
   EventSpan,
+  BlackBg,
 } from "../styledComponent";
 import React, { useState } from "react";
-import Modal from "./Modal";
 import { events } from "../data";
-import { pushData, findData } from "../utils";
+import EventItem from "./EventItem";
+import { pushData, findData, Timer } from "../utils";
 import { EventComponentDiv } from "./Elements";
 // 이벤트 data 불러오기,
 
 const Home = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedID, setSelectedID] = useState(1);
+
   return (
     <MainDiv>
+      <BlackBg />
       {/* d-day 요소들 */}
       <DdayDiv>
-        <DdayTitle>D-day</DdayTitle>
-        <DdayTimer>00:00:00</DdayTimer>
+        <Timer />
       </DdayDiv>
 
       {/* event 요소들 */}
@@ -30,14 +30,10 @@ const Home = () => {
           진행중인 <span>이벤트</span>
         </EventSpan>
         {/* data.js에 저장된 event들 로딩 */}
-        {pushData(events, EventComponentDiv, "", setShowModal, setSelectedID)}
+        {events.map((event) => {
+          return <EventItem key={event.id} {...event} />;
+        })}
       </EventContainerDiv>
-      {showModal && (
-        <Modal
-          setShowModal={setShowModal}
-          data={findData(events, selectedID)}
-        ></Modal>
-      )}
     </MainDiv>
   );
 };

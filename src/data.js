@@ -3,14 +3,14 @@ export const events = [
     id: 1,
     name: "서강어택",
     date: "9.19 ~ 9.21 18:00~20:00",
-    day: 1,
+    src: "main_banner1.PNG",
     detail: "디테일한 설명은 생략한다.",
   },
   {
     id: 2,
     name: "서강가왕",
     date: "9.22",
-    day: 4,
+    src: "main_banner2.PNG",
     detail: "디테일한 설명은 생략한다.",
   },
 ];

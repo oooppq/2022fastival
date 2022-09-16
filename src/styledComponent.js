@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import background from "./images/background.png";
+import test_bg from "./images/test_bg.png";
 
 // 메인 화면 외에 여백은 검게 처리하기 위한 가장 바깥쪽 div
 export const AppContainer = styled.div`
   background-color: black;
+  width: 100%;
 `;
 
 // 가운데 정렬을 위한 바깥쪽 div
@@ -12,7 +14,7 @@ export const OuterDiv = styled.div`
   margin: 0 auto;
   text-align: center;
   background-color: black;
-  background-image: url(${background});
+  // background-image: url(${background});
   background-size: 100%;
   background-repeat: no-repeat;
   position: relative;
@@ -30,7 +32,12 @@ export const HeaderLogo = styled.img`
   max-width: 100%;
 `;
 
-export const MainDiv = styled.div``;
+export const MainDiv = styled.div`
+  width: 100%;
+  background-image: url(${test_bg});
+  background-size: 100%;
+  background-repeat: no-repeat;
+`;
 
 export const FooterDiv = styled.div`
   padding: 10% 0;
@@ -48,17 +55,31 @@ export const FlexUl = styled.ul`
   margin: 0;
   display: flex;
   list-style: none;
-  justify-content: space-evenly;
+  justify-content: center;
 `;
 
-export const Li = styled.li``;
+export const Li = styled.li`
+  width: 115px;
+`;
+
+export const BlackBg = styled.div`
+  position: absolute;
+  z-index: 2;
+  height: 400px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.67);
+`;
 
 // d-day를 위한 divs
 export const DdayDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  position: relative;
   width: 100%;
-
+  z-index: 3;
   color: white;
-  text-align: center;
 `;
 
 export const DdayTitle = styled.div``;
@@ -66,11 +87,15 @@ export const DdayTimer = styled.div``;
 
 // event를 위한 divs
 export const EventContainerDiv = styled.div`
-  text-align: left;
+  width: 100%;
+  text-align: center;
 `;
 
-export const EventSpan = styled.span`
-  margin-left: 3%;
+export const EventSpan = styled.p`
+  margin-top: 40px;
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
 `;
 
 export const EventHeaderDiv = styled.div`
