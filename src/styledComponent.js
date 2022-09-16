@@ -187,8 +187,9 @@ width: 243px;
 left: 88px;
 top: 246px;
 border-radius: 3px;
+border: 2px white solid;
 margin: 0 auto;
-margin-top: 60px;
+margin-top: 110px;
 `
 
 export const FoodName = styled.div`

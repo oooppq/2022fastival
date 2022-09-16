@@ -17,7 +17,7 @@ const FoodModal = (props) => {
           <div style={{ position:"absolute", textAlign:'center', top:'50%', left: '50%', transform: 'translate( -50%, -50% )'}}>{props.data.name}</div>
         </div>
         <p>{props.data.menu}</p>
-        <p>{props.data.detail}</p>
+        {/* <p>{props.data.detail}</p> */}
       
     </FoodModalPopup>
   );

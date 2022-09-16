@@ -127,8 +127,8 @@ export const foods = [
   },
   {
     id: 9,
-    menu: "곱창좋은날",
-    name: "곱창볶음",
+    menu: "곱창볶음",
+    name: "곱창좋은날",
     date: "9.19",
     day: 1,
     detail: "디테일한 설명은 생략한다.",
