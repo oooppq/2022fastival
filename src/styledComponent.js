@@ -145,90 +145,111 @@ export const ModalInnerDiv = styled.div`
   border-radius: 5px;
 `;
 
-
 //푸드트럭
 
-
-export const FoodMap = styled.div`
-width: 345px;
-height: 400px;
-background: white;
-margin: 0 auto;
-margin-bottom: 10px;
-`
+export const FoodMap = styled.img`
+  width: 100%;
+  height: 300px;
+  background: white;
+  margin: 10px auto;
+  margin-bottom: 10px;
+  border: 2px solid white;
+`;
 export const FoodCard = styled.div`
-height: 74px;
-width: 345px;
-left: 35px;
-top: 600px;
-border-radius: 10px;
-display: flex;
-justify-content: space-around;
-align-items: center;
-background-color: white;
-color: black;
-margin: 0 auto;
-margin-bottom: 10px;
-`
+  height: 74px;
+  width: 345px;
+  left: 35px;
+  top: 600px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  color: black;
+  margin: 0 auto;
+  margin-bottom: 10px;
+`;
 
 export const FoodCardNumber = styled.div`
-height: 40px;
-width: 40px;
-border-radius: 4px;
-background-color:  #A30000;
-color: white;
-display: flex;
-justify-content: center;
-align-items: center;
-`
+  height: 40px;
+  width: 40px;
+  border-radius: 4px;
+  background-color: #a30000;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export const FoodCardName = styled.div`
-color: black;
-width: 150px;
-text-align: start;
-`
+  color: black;
+  width: 150px;
+  text-align: start;
+`;
 export const FoodCardDetail = styled.div`
-width: 50;
-color: black;
-`
+  width: 50;
+  color: black;
+`;
 
 export const FoodModalPopup = styled.div`
-height: 541px;
-width: 317px;
-left: 51px;
-top: 186px;
-border-radius: 7px;
-position: fixed;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-border: 1px solid white;
-background-color: black;
-`
+  height: 541px;
+  width: 317px;
+  left: 51px;
+  top: 186px;
+  border-radius: 7px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid white;
+  background-color: black;
+`;
 
 export const FoodImg = styled.img`
-height: 218px;
-width: 243px;
-left: 88px;
-top: 246px;
-border-radius: 3px;
-border: 2px white solid;
-margin: 0 auto;
-margin-top: 110px;
-`
+  height: 218px;
+  width: 243px;
+  left: 88px;
+  top: 246px;
+  border-radius: 3px;
+  border: 2px white solid;
+  margin: 0 auto;
+  margin-top: 110px;
+`;
 
 export const FoodName = styled.div`
-height: 26px;
-width: 102px;
-left: 157px;
-top: 460px;
-border-radius: nullpx;
-color: white;
-`
+  height: 26px;
+  width: 102px;
+  left: 157px;
+  top: 460px;
+  border-radius: nullpx;
+  color: white;
+`;
 
 export const FoodNameTag = styled.img`
-width: 160px;
-height: 44px;
-vertical-align: middle;
-`
+  width: 160px;
+  height: 44px;
+  vertical-align: middle;
+`;
 
+export const FoodMapContainer = styled.div`
+  display: flex;
+  position: absolute;
+  top: 75px;
+  left: 46px;
+  gap: 3px;
+
+  > div:nth-child(5) {
+    margin-left: 50px;
+  }
+`;
+
+export const FoodMapTableContainer = styled.div`
+  width: 25px;
+  height: 25px;
+  background-color: #a30000;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+`;
