@@ -67,7 +67,7 @@ export const pushData = (
 ) => {
   let result = [];
   for (let data of datas) {
-    if (typeof(data.day) === 'object'){
+    if (typeof(data.day) === 'object'){//플리마켓에는 day가 array라서 이렇게 했습니다...
       for(let d of data.day){
         if(dayConverter(d) === selectedDay || selectedDay === ""){
           result.push(
