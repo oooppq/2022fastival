@@ -129,6 +129,7 @@ width: 345px;
 height: 400px;
 background: white;
 margin: 0 auto;
+margin-bottom: 10px;
 `
 export const FoodCard = styled.div`
 height: 74px;
@@ -142,6 +143,7 @@ align-items: center;
 background-color: white;
 color: black;
 margin: 0 auto;
+margin-bottom: 10px;
 `
 
 export const FoodCardNumber = styled.div`
@@ -179,13 +181,12 @@ border: 1px solid white;
 background-color: black;
 `
 
-export const FoodImg = styled.div`
+export const FoodImg = styled.img`
 height: 218px;
 width: 243px;
 left: 88px;
 top: 246px;
 border-radius: 3px;
-background-color: white;
 margin: 0 auto;
 margin-top: 60px;
 `
@@ -197,6 +198,11 @@ left: 157px;
 top: 460px;
 border-radius: nullpx;
 color: white;
+`
 
+export const FoodNameTag = styled.img`
+width: 160px;
+height: 44px;
+vertical-align: middle;
 `
 
