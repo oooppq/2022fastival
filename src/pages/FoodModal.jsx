@@ -14,7 +14,9 @@ const FoodModal = (props) => {
         <FoodImg src={require('../images/food/food'+props.data.id+'.jpeg')}></FoodImg>
         <div style={{position: "relative"}}>
           <FoodNameTag src={require('../images/food/nametag.png')}></FoodNameTag>
-          <div style={{ position:"absolute", textAlign:'center', top:'50%', left: '50%', transform: 'translate( -50%, -50% )'}}>{props.data.name}</div>
+          <div style={{ position:"absolute", textAlign:'center', top:'50%', left: '50%', transform: 'translate( -50%, -50% )',fontFamily: 'GungSeo',
+fontWeight: '400',
+fontSize: '20px',}}>{props.data.name}</div>
         </div>
         <p>{props.data.menu}</p>
         {/* <p>{props.data.detail}</p> */}
