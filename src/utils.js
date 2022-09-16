@@ -1,4 +1,4 @@
-import { DayDiv } from "./styledComponent";
+import { DayContainerDiv, DayDiv } from "./styledComponent";
 import { useState, useEffect } from "react";
 
 // 숫자로 표현된 day를 문자로 바꿔주는 method
@@ -67,7 +67,26 @@ export const pushData = (
 ) => {
   let result = [];
   for (let data of datas) {
-    if (dayConverter(data.day) === selectedDay || selectedDay === "") {
+    if (typeof(data.day) === 'object'){
+      for(let d of data.day){
+        if(dayConverter(d) === selectedDay || selectedDay === ""){
+          result.push(
+            <Element
+              key={data.id}
+              data={data}
+              setShowModal={setShowModal}
+              setSelectedID={setSelectedID}
+            >
+              {data.name}
+            </Element>
+          );
+          break;
+        }
+      }
+      
+    }
+
+    else if (dayConverter(data.day) === selectedDay || selectedDay === "") {
       result.push(
         <Element
           key={data.id}

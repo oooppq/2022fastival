@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { fleas } from "../data";
 import Modal from "./Modal";
-import { DayContainerDiv } from "../styledComponent";
+import { DayContainerDiv, Map } from "../styledComponent";
 import {
   dayConverter,
   pushDayDiv,
@@ -11,7 +11,7 @@ import {
   findData,
 } from "../utils";
 import { FleaComponentDiv } from "./Elements";
-
+import fleamap from "../images/flea/flea_map.png";
 // default로 설정할 요일을 지정
 let defaultDay = getDefaultDay();
 
@@ -28,6 +28,8 @@ const Flea = () => {
           dayOnClick(setSelectedDay, e);
         })}
       </DayContainerDiv>
+      <Map src={fleamap}></Map>
+
 
       {/* 데이터 추가 */}
       {pushData(

@@ -147,7 +147,7 @@ export const ModalInnerDiv = styled.div`
 
 //푸드트럭
 
-export const FoodMap = styled.img`
+export const Map = styled.img`
   width: 100%;
   height: 300px;
   background: white;
@@ -155,7 +155,7 @@ export const FoodMap = styled.img`
   margin-bottom: 10px;
   border: 2px solid white;
 `;
-export const FoodCard = styled.div`
+export const DescCard = styled.div`
   height: 74px;
   width: 345px;
   left: 35px;
@@ -170,7 +170,7 @@ export const FoodCard = styled.div`
   margin-bottom: 10px;
 `;
 
-export const FoodCardNumber = styled.div`
+export const DescCardNumber = styled.div`
   height: 40px;
   width: 40px;
   border-radius: 4px;
@@ -181,12 +181,12 @@ export const FoodCardNumber = styled.div`
   align-items: center;
 `;
 
-export const FoodCardName = styled.div`
+export const DescCardName = styled.div`
   color: black;
   width: 150px;
   text-align: start;
 `;
-export const FoodCardDetail = styled.div`
+export const DescCardDetail = styled.div`
   width: 50;
   color: black;
 `;

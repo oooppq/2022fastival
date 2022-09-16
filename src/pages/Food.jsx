@@ -5,7 +5,7 @@ import {
   FoodMapContainer,
   DayContainerDiv,
   FoodCard,
-  FoodMap,
+  Map,
 } from "../styledComponent";
 import {
   dayConverter,
@@ -31,7 +31,7 @@ const Food = () => {
   return (
     <>
       <div style={{ position: "relative" }}>
-        <FoodMap src={foodmap}></FoodMap>
+        <Map src={foodmap}></Map>
         <FoodMapContainer>
           {foods.map((food) => {
             return (
@@ -55,6 +55,7 @@ const Food = () => {
         setSelectedID
       )}
 
+      {/* 이 모달 부분은 아영이가 만들걸로 바꿔야 할 듯 */}
       {showModal && (
         <FoodModal
           setShowModal={setShowModal}

@@ -3,10 +3,10 @@ import {
   EventTitleDiv,
   EventDateDiv,
   EventPosterDiv,
-  FoodCard,
-  FoodCardNumber,
-  FoodCardDetail,
-  FoodCardName,
+  DescCard,
+  DescCardName,
+  DescCardNumber,
+  DescCardDetail,
 } from "../styledComponent";
 
 export const EventComponentDiv = (props) => {
@@ -29,29 +29,39 @@ export const EventComponentDiv = (props) => {
 
 export const FleaComponentDiv = (props) => {
   return (
-    <div
-      onClick={() => {
-        props.setShowModal(true);
-        props.setSelectedID(props.data.id);
-      }}
-    >
-      {props.data.name}
-    </div>
+    // <div
+    //   onClick={() => {
+    //     props.setShowModal(true);
+    //     props.setSelectedID(props.data.id);
+    //   }}
+    // >
+    //   {props.data.name}
+    // </div>
+    <DescCard
+    onClick={() => {
+      props.setShowModal(true);
+      props.setSelectedID(props.data.id);
+    }}
+  >
+    <DescCardNumber><div>{props.data.id}</div></DescCardNumber>
+    <DescCardName>{props.data.name}</DescCardName>
+    <DescCardDetail>자세히</DescCardDetail>
+  </DescCard>
   );
 };
 
 export const FoodComponentDiv = (props) => {
   return (
-    <FoodCard
+    <DescCard
       onClick={() => {
         props.setShowModal(true);
         props.setSelectedID(props.data.id);
       }}
     >
-      <FoodCardNumber><div>{props.data.id}</div></FoodCardNumber>
-      <FoodCardName>{props.data.name}</FoodCardName>
-      <FoodCardDetail>자세히</FoodCardDetail>
-    </FoodCard>
+      <DescCardNumber><div>{props.data.id}</div></DescCardNumber>
+      <DescCardName>{props.data.name}</DescCardName>
+      <DescCardDetail>자세히</DescCardDetail>
+    </DescCard>
   );
 };
 
