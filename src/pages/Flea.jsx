@@ -33,7 +33,7 @@ const Flea = () => {
           return (
             <div style={{ marginRight: "10px", position: "relative" }}>
               <span
-                style={{ zIndex: "3", position: "relative" }}
+                style={{ zIndex: "3", position: "relative", cursor: "pointer" }}
                 onClick={setDayHandler}
               >
                 {day}

@@ -9,6 +9,17 @@ import {
   DescCardDetail,
 } from "../styledComponent";
 
+import {
+  ScheduleSpan,
+  Scheduleimg,
+  ScheduleimgBox,
+  Schedulenametag,
+  SchedulePlace,
+  ScheduleType,
+  ScheduleDate,
+  ScheduleTime,
+} from "../styledComponent";
+
 export const EventComponentDiv = (props) => {
   return (
     <div
@@ -70,6 +81,11 @@ export const FoodComponentDiv = (props) => {
 };
 
 export const ScheduleComponentDiv = (props) => {
+  let index = 0;
+  let content = null;
+  if (index == 0) {
+    content = props.data.date;
+  }
   return (
     <div
       onClick={() => {
@@ -77,7 +93,22 @@ export const ScheduleComponentDiv = (props) => {
         props.setSelectedID(props.data.id);
       }}
     >
-      {props.data.name}
+
+      {/* 날짜 */}
+      <ScheduleDate>
+        {content}
+      </ScheduleDate>
+      <ScheduleimgBox>
+        <SchedulePlace>{props.data.place}</SchedulePlace>
+        <ScheduleType>{props.data.type}</ScheduleType>
+        <ScheduleTime>{props.data.time}</ScheduleTime>
+        <Scheduleimg>
+          <img src={props.data.backgroundImage} alt="backgroundImage" width="100%"/>
+        </Scheduleimg>
+        <Schedulenametag>{props.data.name} </Schedulenametag>
+      </ScheduleimgBox>
     </div>
+
+
   );
 };

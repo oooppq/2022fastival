@@ -8,6 +8,7 @@ const MapTable = (prop) => {
           prop.setShowModal(true);
           prop.setSelectedID(prop.id);
         }}
+        style={{ cursor: "pointer" }}
       >
         {prop.id}
       </prop.Styled>

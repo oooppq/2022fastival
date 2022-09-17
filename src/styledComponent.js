@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import background from "./images/background.png";
 import test_bg from "./images/test_bg.png";
-import nameTag from "./images/food/nametag.png";
+import nameTag from "./images/nametag.png";
 
 // 메인 화면 외에 여백은 검게 처리하기 위한 가장 바깥쪽 div
 export const AppContainer = styled.div`
@@ -131,7 +131,14 @@ export const EventPosterDiv = styled.div`
 export const DayContainerDiv = styled.div`
   display: flex;
   justify-content: right;
+<<<<<<< HEAD
   width: 100%;
+=======
+  width: 90%;
+  margin: 0 5%;
+  padding-top: 20px;
+  padding-bottom: 10px;
+>>>>>>> 2c946ee2796fbebd586299df42eb618b067dc39c
 `;
 
 export const DayDiv = styled.div`
@@ -272,7 +279,7 @@ export const FoodMapTableContainer = styled.div`
   font-size: 10px;
 `;
 
-// flea market
+// flea-market
 
 export const FleaMapTableContainer = styled.div`
   width: 21px;
@@ -380,4 +387,73 @@ export const FleaMapContainerMon = styled.div`
   > div:nth-child(n + 11) {
     transform: translateX(-240px) translateY(50px);
   }
+`;
+
+//공연일정 divs
+export const MainScheduleDiv = styled.div`
+  background-color: black;
+`;
+export const ScheduleContainerDIv = styled.div``;
+export const ScheduleSpan = styled.div`
+  text-align: center;
+  font-size: 25px;
+  padding: 15px;
+`;
+
+export const ScheduleimgBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+export const Scheduleimg = styled.div`
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  width: 250px;
+  height: 240px;
+  margin: 15px 0;
+  border: 2px solid #ffffff;
+`;
+
+export const Schedulenametag = styled.div`
+  font-family: ChosunGs;
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 20px;
+  width: 140px;
+  height: 55px;
+  color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(${nameTag});
+  background-repeat: no-repeat;
+  position: relative;
+  top: -40px;
+`;
+
+export const SchedulePlace = styled.div`
+  font-size: 30px;
+  margin: 20px;
+  color: white;
+  background-color: #424242;
+  border-radius: 5px;
+`;
+
+export const ScheduleType = styled.div`
+  font-size: 22px;
+  color: white;
+  padding-bottom: 10px;
+`;
+
+export const ScheduleDate = styled.div`
+  font-size: 15px;
+  color: white;
+  padding-bottom: 20px;
+`;
+
+export const ScheduleTime = styled.div`
+  font-size: 15px;
+  color: white;
+  padding: 5px;
 `;
