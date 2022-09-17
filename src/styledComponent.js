@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import background from "./images/background.png";
 import test_bg from "./images/test_bg.png";
-import nametag from "./images/schedule/nametag.png";
+import nametag from "./images/nametag.png"
 
 // 메인 화면 외에 여백은 검게 처리하기 위한 가장 바깥쪽 div
 export const AppContainer = styled.div`
@@ -311,7 +311,7 @@ export const SchedulePlace = styled.div`
   font-size: 25px;
   margin: 20px;
   color: white;
-  background-color:  #424242;
+  background-color: #424242;
   border-radius: 5px;
   `;
 
@@ -325,4 +325,10 @@ export const ScheduleDate = styled.div`
   font-size: 15px;
   color: white;
   padding-bottom: 20px;
+  `;
+
+export const ScheduleTime = styled.div` 
+  font-size: 16px;
+  color: white;
+  padding: 5px;
   `;

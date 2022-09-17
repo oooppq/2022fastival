@@ -17,6 +17,7 @@ import {
   SchedulePlace,
   ScheduleType,
   ScheduleDate,
+  ScheduleTime,
 } from "../styledComponent";
 
 export const EventComponentDiv = (props) => {
@@ -96,6 +97,7 @@ export const ScheduleComponentDiv = (props) => {
       <ScheduleimgBox>
         <SchedulePlace>{props.data.place}</SchedulePlace>
         <ScheduleType>{props.data.type}</ScheduleType>
+        <ScheduleTime>{props.data.time}</ScheduleTime>
         <Scheduleimg>
           <img src={props.data.backgroundImage} alt="backgroundImage" width="100%"/>
         </Scheduleimg>
