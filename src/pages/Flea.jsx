@@ -1,47 +1,127 @@
 import React, { useState } from "react";
 import { fleas } from "../data";
-import Modal from "./Modal";
-import { DayContainerDiv } from "../styledComponent";
+import FleaModal from "./FleaModal";
 import {
-  dayConverter,
-  pushDayDiv,
-  dayOnClick,
-  getDefaultDay,
-  pushData,
-  findData,
-} from "../utils";
+  DayContainerDiv,
+  Map,
+  FleaMapContainerMon,
+  FleaMapContainerThr,
+  FleaMapTableContainer,
+} from "../styledComponent";
+import { findData } from "../utils";
 import { FleaComponentDiv } from "./Elements";
-
-// default로 설정할 요일을 지정
-let defaultDay = getDefaultDay();
+import fleamap from "../images/flea/flea_map.png";
+import MapTable from "./MapTable";
+import Blood from "../images/blood.png";
 
 const Flea = () => {
   // 요일 선택을 반영하기 위해 useState로 구현
-  const [selectedDay, setSelectedDay] = useState(dayConverter(defaultDay));
   const [showModal, setShowModal] = useState(false);
   const [selectedID, setSelectedID] = useState(1);
+  const dayList = ["월~수", "목~금"];
+  const [currentDay, setCurrentDay] = useState("월~수");
+  const setDayHandler = (event) => {
+    const nowDay = event.target.innerText;
+    setCurrentDay(nowDay);
+  };
+
   return (
     <>
       <DayContainerDiv>
         {/* 요일을 추가, onclick event는 parameter 전달을 위해 화살표 함수로 구현 */}
-        {pushDayDiv(selectedDay, (e) => {
-          dayOnClick(setSelectedDay, e);
+        {dayList.map((day) => {
+          return (
+            <div style={{ marginRight: "10px", position: "relative" }}>
+              <span
+                style={{ zIndex: "3", position: "relative" }}
+                onClick={setDayHandler}
+              >
+                {day}
+              </span>
+              {currentDay === day ? (
+                <img
+                  style={{
+                    width: "60px",
+                    position: "absolute",
+                    top: "-25px",
+                    left: "-10px",
+                    zIndex: "0",
+                  }}
+                  src={Blood}
+                ></img>
+              ) : (
+                <></>
+              )}
+            </div>
+          );
         })}
       </DayContainerDiv>
+      <div style={{ position: "relative" }}>
+        <Map src={fleamap}></Map>
+        {currentDay === "월~수" ? (
+          <FleaMapContainerMon>
+            {fleas.map((flea) => {
+              return currentDay === flea.date ? (
+                <MapTable
+                  key={flea.name}
+                  {...flea}
+                  setShowModal={setShowModal}
+                  setSelectedID={setSelectedID}
+                  Styled={FleaMapTableContainer}
+                />
+              ) : (
+                <></>
+              );
+            })}
+          </FleaMapContainerMon>
+        ) : (
+          <FleaMapContainerThr>
+            {fleas.map((flea) => {
+              return currentDay === flea.date ? (
+                <MapTable
+                  key={flea.name}
+                  {...flea}
+                  setShowModal={setShowModal}
+                  setSelectedID={setSelectedID}
+                  Styled={FleaMapTableContainer}
+                />
+              ) : (
+                <></>
+              );
+            })}
+          </FleaMapContainerThr>
+        )}
+      </div>
 
       {/* 데이터 추가 */}
-      {pushData(
+      {/* {pushData(
         fleas,
         FleaComponentDiv,
         selectedDay,
         setShowModal,
         setSelectedID
-      )}
+      )} */}
+      {fleas.map((flea) => {
+        return currentDay === flea.date ? (
+          <FleaComponentDiv
+            key={flea.id}
+            data={flea}
+            setShowModal={setShowModal}
+            setSelectedID={setSelectedID}
+          >
+            {flea.name}
+          </FleaComponentDiv>
+        ) : (
+          <></>
+        );
+      })}
+
       {showModal && (
-        <Modal
+        <FleaModal
           setShowModal={setShowModal}
           data={findData(fleas, selectedID)}
-        ></Modal>
+          type={"flea"}
+        ></FleaModal>
       )}
     </>
   );

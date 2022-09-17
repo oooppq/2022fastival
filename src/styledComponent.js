@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import background from "./images/background.png";
 import test_bg from "./images/test_bg.png";
+import nameTag from "./images/food/nametag.png";
 
 // 메인 화면 외에 여백은 검게 처리하기 위한 가장 바깥쪽 div
 export const AppContainer = styled.div`
@@ -10,7 +12,7 @@ export const AppContainer = styled.div`
 
 // 가운데 정렬을 위한 바깥쪽 div
 export const OuterDiv = styled.div`
-  width: 425px;
+  max-width: 425px;
   margin: 0 auto;
   text-align: center;
   background-color: black;
@@ -30,6 +32,18 @@ export const HeaderLogo = styled.img`
   text-align: center;
   padding: 40px 30px 0px 30px;
   max-width: 100%;
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  position: relative;
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+  }
 `;
 
 export const MainDiv = styled.div`
@@ -117,8 +131,7 @@ export const EventPosterDiv = styled.div`
 export const DayContainerDiv = styled.div`
   display: flex;
   justify-content: right;
-  width: 90%;
-  margin: 0 5%;
+  width: 100%;
 `;
 
 export const DayDiv = styled.div`
@@ -148,7 +161,7 @@ export const ModalInnerDiv = styled.div`
 
 //푸드트럭
 
-export const FoodMap = styled.img`
+export const Map = styled.img`
   width: 100%;
   height: 300px;
   background: white;
@@ -156,7 +169,7 @@ export const FoodMap = styled.img`
   margin-bottom: 10px;
   border: 2px solid white;
 `;
-export const FoodCard = styled.div`
+export const DescCard = styled.div`
   height: 74px;
   width: 345px;
   left: 35px;
@@ -171,7 +184,7 @@ export const FoodCard = styled.div`
   margin-bottom: 10px;
 `;
 
-export const FoodCardNumber = styled.div`
+export const DescCardNumber = styled.div`
   height: 40px;
   width: 40px;
   border-radius: 4px;
@@ -182,18 +195,18 @@ export const FoodCardNumber = styled.div`
   align-items: center;
 `;
 
-export const FoodCardName = styled.div`
+export const DescCardName = styled.div`
   color: black;
   width: 150px;
   text-align: start;
 `;
-export const FoodCardDetail = styled.div`
+export const DescCardDetail = styled.div`
   width: 50;
   color: black;
 `;
 
 export const FoodModalPopup = styled.div`
-  height: 541px;
+  height: 430px;
   width: 317px;
   left: 51px;
   top: 186px;
@@ -204,6 +217,7 @@ export const FoodModalPopup = styled.div`
   transform: translate(-50%, -50%);
   border: 1px solid white;
   background-color: black;
+  z-index: 100;
 `;
 
 export const FoodImg = styled.img`
@@ -211,10 +225,9 @@ export const FoodImg = styled.img`
   width: 243px;
   left: 88px;
   top: 246px;
-  border-radius: 3px;
-  border: 2px white solid;
+  border-radius: 6px;
   margin: 0 auto;
-  margin-top: 110px;
+  margin-top: 40px;
 `;
 
 export const FoodName = styled.div`
@@ -226,21 +239,25 @@ export const FoodName = styled.div`
   color: white;
 `;
 
-export const FoodNameTag = styled.img`
-  width: 160px;
-  height: 44px;
-  vertical-align: middle;
+export const FoodNameTag = styled.div`
+  background-image: url(${nameTag});
+  background-repeat: no-repeat;
+  width: 230px;
+  height: 50px;
+  position: absolute;
+  left: 90px;
+  top: -25px;
 `;
 
 export const FoodMapContainer = styled.div`
   display: flex;
   position: absolute;
   top: 75px;
-  left: 46px;
+  left: 60px;
   gap: 3px;
 
   > div:nth-child(5) {
-    margin-left: 50px;
+    margin-left: 35px;
   }
 `;
 
@@ -253,4 +270,114 @@ export const FoodMapTableContainer = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 10px;
+`;
+
+// flea market
+
+export const FleaMapTableContainer = styled.div`
+  width: 21px;
+  height: 21px;
+  background-color: #a30000;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+`;
+
+export const FleaModalPopup = styled.div`
+  height: 200px;
+  width: 317px;
+  left: 51px;
+  top: 186px;
+  border-radius: 7px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid white;
+  background-color: black;
+  z-index: 100;
+`;
+
+export const FleaNameTag = styled.div`
+  background-image: url(${nameTag});
+  background-repeat: no-repeat;
+  width: 230px;
+  height: 50px;
+  position: absolute;
+  left: 90px;
+  top: 40px;
+`;
+
+export const FleaMapContainerThr = styled.div`
+  display: flex;
+  position: absolute;
+  top: 110px;
+  left: 100px;
+  gap: 3px;
+
+  > div:nth-child(13) {
+    margin-left: 10px;
+  }
+  > div:nth-child(n + 14) {
+    transform: translateX(-23px) translateY(25px);
+  }
+  > div:nth-child(n + 15) {
+    transform: translateX(-46px) translateY(50px);
+  }
+  > div:nth-child(n + 15) {
+    transform: translateX(-46px) translateY(50px);
+  }
+  > div:nth-child(n + 16) {
+    transform: translateX(-106px) translateY(50px);
+  }
+  > div:nth-child(n + 17) {
+    transform: translateX(-154px) translateY(50px);
+  }
+  > div:nth-child(n + 18) {
+    transform: translateX(-202px) translateY(50px);
+  }
+  > div:nth-child(n + 19) {
+    transform: translateX(-250px) translateY(50px);
+  }
+  > div:nth-child(n + 20) {
+    transform: translateX(-298px) translateY(50px);
+  }
+  > div:nth-child(n + 21) {
+    transform: translateX(-346px) translateY(50px);
+  }
+  > div:nth-child(n + 22) {
+    transform: translateX(-394px) translateY(50px);
+  }
+  > div:nth-child(n + 23) {
+    transform: translateX(-442px) translateY(50px);
+  }
+  > div:nth-child(n + 24) {
+    transform: translateX(-490px) translateY(50px);
+  }
+  > div:nth-child(n + 25) {
+    transform: translateX(-538px) translateY(50px);
+  }
+  > div:nth-child(n + 26) {
+    transform: translateX(-586px) translateY(50px);
+  }
+  > div:nth-child(n + 27) {
+    transform: translateX(-632px) translateY(59px) rotate(-45deg);
+  }
+  > div:nth-child(n + 28) {
+    transform: translateX(-668px) translateY(80px) rotate(-75deg);
+  }
+`;
+
+export const FleaMapContainerMon = styled.div`
+  display: flex;
+  position: absolute;
+  top: 110px;
+  left: 120px;
+  gap: 3px;
+
+  > div:nth-child(n + 11) {
+    transform: translateX(-240px) translateY(50px);
+  }
 `;

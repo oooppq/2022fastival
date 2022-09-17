@@ -8,8 +8,8 @@ import {
 import React, { useState } from "react";
 import { events } from "../data";
 import EventItem from "./EventItem";
-import { pushData, findData, Timer } from "../utils";
-import { EventComponentDiv } from "./Elements";
+import Timer from "./Timer";
+
 // 이벤트 data 불러오기,
 
 const Home = () => {

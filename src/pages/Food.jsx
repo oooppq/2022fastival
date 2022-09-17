@@ -3,9 +3,10 @@ import { foods } from "../data";
 import Modal from "./Modal";
 import {
   FoodMapContainer,
+  FoodMapTableContainer,
   DayContainerDiv,
   FoodCard,
-  FoodMap,
+  Map,
 } from "../styledComponent";
 import {
   dayConverter,
@@ -16,7 +17,7 @@ import {
   findData,
 } from "../utils";
 import { FoodComponentDiv } from "./Elements";
-import FoodMapTable from "./FoodMapTable";
+import MapTable from "./MapTable";
 import FoodModal from "./FoodModal";
 import foodmap from "../images/food/K-GN.PNG";
 
@@ -30,17 +31,20 @@ const Food = () => {
   const [selectedID, setSelectedID] = useState(1);
   return (
     <>
-      <div style={{ textAlign: "right" }}>9.19~23 동일</div>
+      <div style={{ textAlign: "right", marginRight: "10px" }}>
+        9.19~23 동일
+      </div>
       <div style={{ position: "relative" }}>
-        <FoodMap src={foodmap}></FoodMap>
+        <Map src={foodmap}></Map>
         <FoodMapContainer>
           {foods.map((food) => {
             return (
-              <FoodMapTable
+              <MapTable
                 key={food.id}
                 {...food}
                 setShowModal={setShowModal}
                 setSelectedID={setSelectedID}
+                Styled={FoodMapTableContainer}
               />
             );
           })}
@@ -56,10 +60,12 @@ const Food = () => {
         setSelectedID
       )}
 
+      {/* 이 모달 부분은 아영이가 만들걸로 바꿔야 할 듯 */}
       {showModal && (
         <FoodModal
           setShowModal={setShowModal}
           data={findData(foods, selectedID)}
+          type={"food"}
         ></FoodModal>
       )}
     </>
