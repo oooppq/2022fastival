@@ -1,28 +1,34 @@
 import React from "react";
-import { FlexUl } from "../styledComponent";
+import { ItemContainer, ItemInfo, ItemImg } from "../styledComponent";
+import blood2 from "../images/blood2.png";
 
-const EventItem = ({ id, name, date, src, detail, place }) => {
+const EventItem = ({ name, date, src, place }) => {
   return (
-    <div style={{ width: "93%", margin: "40px auto" }}>
-      <div
-        style={{
-          display: "flex",
-          marginBottom: "20px",
-          justifyContent: "space-between",
-        }}
-      >
-        <div>{name}</div>
-        <div>{place}</div>
-        <div>{date}</div>
-      </div>
-      <div>
+    <ItemContainer>
+      <ItemInfo>
+        <div
+          style={{ position: "relative", zIndex: "1", marginBottom: "12px" }}
+        >
+          {name}
+        </div>
         <img
-          style={{ width: "400px", height: "200px", objectFit: "cover" }}
-          src={require(`../images/home/${src}`)}
-          alt={name}
-        />
-      </div>
-    </div>
+          style={{
+            position: "absolute",
+            top: "-45px",
+            left: "160px",
+            zIndex: "0",
+          }}
+          src={blood2}
+        ></img>
+        <div style={{ zIndex: "1", position: "relative" }}>
+          <ItemImg src={require(`../images/home/${src}`)} alt={name} />
+        </div>
+      </ItemInfo>
+      <ul style={{ fontSize: "15px" }}>
+        <li style={{ textAlign: "left" }}>장소 : {place}</li>
+        <li style={{ textAlign: "left", marginTop: "7px" }}>일시 : {date}</li>
+      </ul>
+    </ItemContainer>
   );
 };
 
