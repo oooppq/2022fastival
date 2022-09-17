@@ -19,7 +19,7 @@ import {
 import { FoodComponentDiv } from "./Elements";
 import MapTable from "./MapTable";
 import FoodModal from "./FoodModal";
-import foodmap from "../images/food/K-GN.PNG";
+import foodmap from "../images/food/K-GN.png";
 
 // default로 설정할 요일을 지정
 let defaultDay = getDefaultDay();

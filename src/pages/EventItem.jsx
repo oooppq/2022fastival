@@ -17,7 +17,7 @@ const EventItem = ({ id, name, date, src, detail, place }) => {
       </div>
       <div>
         <img
-          style={{ width: "400px", height: "150px", objectFit: "cover" }}
+          style={{ width: "400px", height: "200px", objectFit: "cover" }}
           src={require(`../images/home/${src}`)}
           alt={name}
         />
