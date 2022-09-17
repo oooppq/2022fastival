@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import background from "./images/background.png";
 import test_bg from "./images/test_bg.png";
+import nametag from "./images/schedule/nametag.png";
 
 // 메인 화면 외에 여백은 검게 처리하기 위한 가장 바깥쪽 div
 export const AppContainer = styled.div`
@@ -118,6 +119,8 @@ export const DayContainerDiv = styled.div`
   justify-content: right;
   width: 90%;
   margin: 0 5%;
+  padding-top: 20px;
+  padding-bottom: 10px;
 `;
 
 export const DayDiv = styled.div`
@@ -253,3 +256,73 @@ export const FoodMapTableContainer = styled.div`
   align-items: center;
   font-size: 10px;
 `;
+
+//공연일정 divs
+export const MainScheduleDiv = styled.div`
+  background-color:black;
+
+`;
+export const ScheduleContainerDIv = styled.div`
+
+`;
+export const ScheduleSpan = styled.div`
+  text-align:center;
+  font-size: 25px;
+  padding: 15px;
+
+`;
+
+export const ScheduleimgBox = styled.div`
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+`;
+export const Scheduleimg = styled.div`
+  box-sizing: border-box;
+  display:flex;
+  justify-content:center;
+  width: 250px;
+  height: 240px;
+  margin:15px 0;
+  border: 2px solid #FFFFFF;
+
+`;
+
+export const Schedulenametag = styled.div`
+
+  font-family: ChosunGs;
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 20px;
+  width:140px;
+  height:55px;
+  color: rgba(255,255,255, 0.9);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background-image: url(${nametag});
+  background-repeat:no-repeat;
+  position:relative;
+  top:-40px;
+`;
+
+export const SchedulePlace = styled.div` 
+  font-size: 25px;
+  margin: 20px;
+  color: white;
+  background-color:  #424242;
+  border-radius: 5px;
+  `;
+
+export const ScheduleType = styled.div` 
+  font-size: 20px;
+  color: white;
+  padding-bottom: 10px;
+`;
+
+export const ScheduleDate = styled.div` 
+  font-size: 15px;
+  color: white;
+  padding-bottom: 20px;
+  `;
