@@ -17,7 +17,8 @@ let defaultDay = getDefaultDay();
 
 const Schedule = () => {
   // 요일 선택을 반영하기 위해 useState로 구현
-  const [selectedDay, setSelectedDay] = useState(dayConverter(defaultDay));
+  //defaultDay를 하면 아무것도 안나와서 기본값을 1로 조정
+  const [selectedDay, setSelectedDay] = useState(dayConverter(1));
   const [showModal, setShowModal] = useState(false);
   const [selectedID, setSelectedID] = useState(1);
   return (
