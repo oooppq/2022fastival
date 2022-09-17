@@ -53,6 +53,7 @@ const Timer = () => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
+        zIndex: "3",
       }}
     >
       {sumTime <= 0 ? (

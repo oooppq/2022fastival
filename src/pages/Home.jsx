@@ -16,9 +16,9 @@ import blood4 from "../images/blood4.png";
 const Home = () => {
   return (
     <MainDiv>
-      <BlackBg />
       {/* d-day 요소들 */}
       <DdayDiv>
+        <BlackBg />
         <Timer />
       </DdayDiv>
 

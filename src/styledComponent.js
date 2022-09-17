@@ -6,12 +6,14 @@ import nameTag from "./images/nametag.png";
 
 // 메인 화면 외에 여백은 검게 처리하기 위한 가장 바깥쪽 div
 export const AppContainer = styled.div`
+  min-width: 320px;
   background-color: black;
   width: 100%;
 `;
 
 // 가운데 정렬을 위한 바깥쪽 div
 export const OuterDiv = styled.div`
+  min-width: 320px;
   max-width: 480px;
   margin: 0 auto;
   text-align: center;
@@ -48,9 +50,6 @@ export const StyledLink = styled(Link)`
 
 export const MainDiv = styled.div`
   width: 100%;
-  background-image: url(${test_bg});
-  background-size: 100%;
-  background-repeat: no-repeat;
 `;
 
 export const FooterDiv = styled.div`
@@ -71,18 +70,18 @@ export const FlexUl = styled.ul`
   display: flex;
   list-style: none;
   justify-content: center;
+  gap: 10px;
 `;
 
 export const Li = styled.li`
   padding: 20px 3px;
-  width: 125px;
   font-size: 20px;
 `;
 
 export const BlackBg = styled.div`
   position: absolute;
-  z-index: 2;
-  height: 480px;
+  z-index: 1;
+  height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.67);
 `;
@@ -92,11 +91,14 @@ export const DdayDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 400px;
+  height: 350px;
   position: relative;
   width: 100%;
   z-index: 3;
   color: white;
+  background-image: url(${test_bg});
+  background-size: cover;
+  background-repeat: no-repeat;
 `;
 
 export const DdayTitle = styled.div``;
@@ -104,7 +106,7 @@ export const DdayTimer = styled.div``;
 
 // event를 위한 divs
 export const EventContainerDiv = styled.div`
-  margin-top: 100px;
+  margin-top: 20px;
   width: 100%;
   text-align: center;
   position: relative;
@@ -485,7 +487,7 @@ export const ItemInfo = styled.div`
 `;
 
 export const ItemImg = styled.img`
-  width: 400px;
+  width: 97%;
   height: 250px;
   object-fit: cover;
   z-index: 1;
