@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { schedules } from "../data";
-import Modal from "./Modal";
-import { DayContainerDiv } from "../styledComponent";
+// import Modal from "./Modal";
+import { DayContainerDiv, MainScheduleDiv, ScheduleContainerDIv, ScheduleSpan, Scheduleimg, ScheduleimgBox, Schedulenametag } from "../styledComponent";
 import { ScheduleComponentDiv } from "./Elements";
 import {
   dayConverter,
@@ -21,29 +21,35 @@ const Schedule = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedID, setSelectedID] = useState(1);
   return (
-    <>
+    <MainScheduleDiv>
       <DayContainerDiv>
         {/* 요일을 추가, onclick event는 parameter 전달을 위해 화살표 함수로 구현 */}
         {pushDayDiv(selectedDay, (e) => {
           dayOnClick(setSelectedDay, e);
         })}
       </DayContainerDiv>
-
+      <ScheduleContainerDIv>
+        <ScheduleSpan>Performance Schedule</ScheduleSpan>
+      </ScheduleContainerDIv>
       {/* 데이터 추가 */}
-      {pushData(
-        schedules,
-        ScheduleComponentDiv,
-        selectedDay,
-        setShowModal,
-        setSelectedID
-      )}
-      {showModal && (
+
+      
+      {/* {showModal && (
         <Modal
           setShowModal={setShowModal}
           data={findData(schedules, selectedID)}
         ></Modal>
+      )} */}
+
+
+       {pushData(
+        schedules,
+        ScheduleComponentDiv,
+        selectedDay,
+        setShowModal,
+        setSelectedID,
       )}
-    </>
+    </MainScheduleDiv>
   );
 };
 
