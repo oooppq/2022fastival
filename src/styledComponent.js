@@ -308,7 +308,7 @@ export const Schedulenametag = styled.div`
 `;
 
 export const SchedulePlace = styled.div` 
-  font-size: 25px;
+  font-size: 30px;
   margin: 20px;
   color: white;
   background-color: #424242;
@@ -316,7 +316,7 @@ export const SchedulePlace = styled.div`
   `;
 
 export const ScheduleType = styled.div` 
-  font-size: 20px;
+  font-size: 22px;
   color: white;
   padding-bottom: 10px;
 `;
@@ -328,7 +328,7 @@ export const ScheduleDate = styled.div`
   `;
 
 export const ScheduleTime = styled.div` 
-  font-size: 16px;
+  font-size: 15px;
   color: white;
   padding: 5px;
   `;
