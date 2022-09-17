@@ -6,13 +6,15 @@ import nameTag from "./images/nametag.png";
 
 // 메인 화면 외에 여백은 검게 처리하기 위한 가장 바깥쪽 div
 export const AppContainer = styled.div`
+  min-width: 320px;
   background-color: black;
   width: 100%;
 `;
 
 // 가운데 정렬을 위한 바깥쪽 div
 export const OuterDiv = styled.div`
-  max-width: 425px;
+  min-width: 320px;
+  max-width: 480px;
   margin: 0 auto;
   text-align: center;
   background-color: black;
@@ -48,14 +50,12 @@ export const StyledLink = styled(Link)`
 
 export const MainDiv = styled.div`
   width: 100%;
-  background-image: url(${test_bg});
-  background-size: 100%;
-  background-repeat: no-repeat;
 `;
 
 export const FooterDiv = styled.div`
   padding: 10% 0;
   text-align: center;
+  font-family: "Noto Sans KR", sans-serif;
 `;
 
 export const Nav = styled.nav`
@@ -70,17 +70,18 @@ export const FlexUl = styled.ul`
   display: flex;
   list-style: none;
   justify-content: center;
+  gap: 10px;
 `;
 
 export const Li = styled.li`
   padding: 20px 3px;
-  width: 115px;
+  font-size: 20px;
 `;
 
 export const BlackBg = styled.div`
   position: absolute;
-  z-index: 2;
-  height: 400px;
+  z-index: 1;
+  height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.67);
 `;
@@ -90,11 +91,14 @@ export const DdayDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 400px;
+  height: 350px;
   position: relative;
   width: 100%;
   z-index: 3;
   color: white;
+  background-image: url(${test_bg});
+  background-size: cover;
+  background-repeat: no-repeat;
 `;
 
 export const DdayTitle = styled.div``;
@@ -102,8 +106,10 @@ export const DdayTimer = styled.div``;
 
 // event를 위한 divs
 export const EventContainerDiv = styled.div`
+  margin-top: 20px;
   width: 100%;
   text-align: center;
+  position: relative;
 `;
 
 export const EventSpan = styled.p`
@@ -131,14 +137,11 @@ export const EventPosterDiv = styled.div`
 export const DayContainerDiv = styled.div`
   display: flex;
   justify-content: right;
-<<<<<<< HEAD
-  width: 100%;
-=======
+  // width: 100%;
   width: 90%;
   margin: 0 5%;
   padding-top: 20px;
   padding-bottom: 10px;
->>>>>>> 2c946ee2796fbebd586299df42eb618b067dc39c
 `;
 
 export const DayDiv = styled.div`
@@ -169,7 +172,7 @@ export const ModalInnerDiv = styled.div`
 //푸드트럭
 
 export const Map = styled.img`
-  width: 100%;
+  width: 380px;
   height: 300px;
   background: white;
   margin: 10px auto;
@@ -264,13 +267,13 @@ export const FoodMapContainer = styled.div`
   gap: 3px;
 
   > div:nth-child(5) {
-    margin-left: 35px;
+    margin-left: 25px;
   }
 `;
 
 export const FoodMapTableContainer = styled.div`
-  width: 25px;
-  height: 25px;
+  width: 23px;
+  height: 23px;
   background-color: #a30000;
   border-radius: 5px;
   display: flex;
@@ -320,73 +323,84 @@ export const FleaNameTag = styled.div`
 export const FleaMapContainerThr = styled.div`
   display: flex;
   position: absolute;
-  top: 110px;
-  left: 100px;
+  top: 114px;
+  left: 70px;
   gap: 3px;
 
   > div:nth-child(13) {
-    margin-left: 10px;
+    margin-left: 6px;
   }
   > div:nth-child(n + 14) {
-    transform: translateX(-23px) translateY(25px);
+    transform: translateX(-24px) translateY(25px);
   }
   > div:nth-child(n + 15) {
-    transform: translateX(-46px) translateY(50px);
-  }
-  > div:nth-child(n + 15) {
-    transform: translateX(-46px) translateY(50px);
+    transform: translateX(-48px) translateY(50px);
   }
   > div:nth-child(n + 16) {
-    transform: translateX(-106px) translateY(50px);
+    transform: translateX(-100px) translateY(50px);
   }
   > div:nth-child(n + 17) {
-    transform: translateX(-154px) translateY(50px);
+    transform: translateX(-148px) translateY(50px);
   }
   > div:nth-child(n + 18) {
-    transform: translateX(-202px) translateY(50px);
+    transform: translateX(-196px) translateY(50px);
   }
   > div:nth-child(n + 19) {
-    transform: translateX(-250px) translateY(50px);
+    transform: translateX(-244px) translateY(50px);
   }
   > div:nth-child(n + 20) {
-    transform: translateX(-298px) translateY(50px);
+    transform: translateX(-292px) translateY(50px);
   }
   > div:nth-child(n + 21) {
-    transform: translateX(-346px) translateY(50px);
+    transform: translateX(-340px) translateY(50px);
   }
   > div:nth-child(n + 22) {
-    transform: translateX(-394px) translateY(50px);
+    transform: translateX(-388px) translateY(50px);
   }
   > div:nth-child(n + 23) {
-    transform: translateX(-442px) translateY(50px);
+    transform: translateX(-436px) translateY(50px);
   }
   > div:nth-child(n + 24) {
-    transform: translateX(-490px) translateY(50px);
+    transform: translateX(-484px) translateY(50px);
   }
   > div:nth-child(n + 25) {
-    transform: translateX(-538px) translateY(50px);
+    transform: translateX(-532px) translateY(50px);
   }
   > div:nth-child(n + 26) {
-    transform: translateX(-586px) translateY(50px);
+    transform: translateX(-580px) translateY(50px);
   }
   > div:nth-child(n + 27) {
-    transform: translateX(-632px) translateY(59px) rotate(-45deg);
+    transform: translateX(-625px) translateY(63px) rotate(-60deg);
   }
   > div:nth-child(n + 28) {
-    transform: translateX(-668px) translateY(80px) rotate(-75deg);
+    transform: translateX(-652px) translateY(86px) rotate(-90deg);
   }
 `;
 
 export const FleaMapContainerMon = styled.div`
   display: flex;
   position: absolute;
-  top: 110px;
+  top: 115px;
   left: 120px;
   gap: 3px;
 
   > div:nth-child(n + 11) {
-    transform: translateX(-240px) translateY(50px);
+    transform: translateX(-240px) translateY(46px);
   }
+`;
+
+export const FleaBlood = styled.img`
+  width: 60px;
+  position: absolute;
+  top: -25px;
+  left: -10px;
+  z-index: 0;
+`;
+
+export const FleaEachDay = styled.div`
+  z-index: "3";
+  position: relative;
+  cursor: pointer;
 `;
 
 //공연일정 divs
@@ -456,4 +470,25 @@ export const ScheduleTime = styled.div`
   font-size: 15px;
   color: white;
   padding: 5px;
+`;
+
+// home-event
+
+export const ItemContainer = styled.div`
+  width: 93%;
+  margin: 40px auto;
+`;
+
+export const ItemInfo = styled.div`
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 10px;
+  position: relative;
+`;
+
+export const ItemImg = styled.img`
+  width: 97%;
+  height: 250px;
+  object-fit: cover;
+  z-index: 1;
 `;

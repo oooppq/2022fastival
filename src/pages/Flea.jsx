@@ -7,6 +7,8 @@ import {
   FleaMapContainerMon,
   FleaMapContainerThr,
   FleaMapTableContainer,
+  FleaBlood,
+  FleaEachDay,
 } from "../styledComponent";
 import { findData } from "../utils";
 import { FleaComponentDiv } from "./Elements";
@@ -32,26 +34,13 @@ const Flea = () => {
         {dayList.map((day) => {
           return (
             <div style={{ marginRight: "10px", position: "relative" }}>
-              <span
+              <FleaEachDay
                 style={{ zIndex: "3", position: "relative", cursor: "pointer" }}
                 onClick={setDayHandler}
               >
                 {day}
-              </span>
-              {currentDay === day ? (
-                <img
-                  style={{
-                    width: "60px",
-                    position: "absolute",
-                    top: "-25px",
-                    left: "-10px",
-                    zIndex: "0",
-                  }}
-                  src={Blood}
-                ></img>
-              ) : (
-                <></>
-              )}
+              </FleaEachDay>
+              {currentDay === day ? <FleaBlood src={Blood}></FleaBlood> : <></>}
             </div>
           );
         })}

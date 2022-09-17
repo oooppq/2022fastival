@@ -2,7 +2,7 @@ export const events = [
   {
     id: 1,
     name: "서강어택",
-    date: "9.19 ~ 9.21 18:00~20:00",
+    date: "9.19 ~ 9.21 (18:00~20:00)",
     src: "main_banner1.png",
     place: "체육관",
     detail: "디테일한 설명은 생략한다.",
@@ -18,9 +18,9 @@ export const events = [
   {
     id: 3,
     name: "서강, 좀비의 집",
-    date: "9.20 ~ 9.21 19:00~22:00",
+    date: "9.20 ~ 9.21 (19:00~22:00)",
     src: "main_banner3.png",
-    place: "쳥넌광장",
+    place: "청년광장",
     detail: "디테일한 설명은 생략한다.",
   },
 ];
@@ -208,7 +208,6 @@ export const schedules = [
     day: 3,
     backgroundImage: `${process.env.PUBLIC_URL}/schedule/9.21.png`,
   },
-
 ];
 
 export const foods = [

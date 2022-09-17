@@ -54,7 +54,7 @@ const Header = () => {
           </StyledLink>
           <StyledLink to="/food">
             <Li
-              style={{ zIndex: "1", position: "relative", paddingLeft: "20px" }}
+              style={{ zIndex: "1", position: "relative" }}
               onClick={handleBlood}
             >
               푸드트럭
