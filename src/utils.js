@@ -1,5 +1,4 @@
 import { DayContainerDiv, DayDiv } from "./styledComponent";
-import { useState, useEffect } from "react";
 
 // 숫자로 표현된 day를 문자로 바꿔주는 method
 export const dayConverter = (num) => {
@@ -67,9 +66,10 @@ export const pushData = (
 ) => {
   let result = [];
   for (let data of datas) {
-    if (typeof(data.day) === 'object'){//플리마켓에는 day가 array라서 이렇게 했습니다...
-      for(let d of data.day){
-        if(dayConverter(d) === selectedDay || selectedDay === ""){
+    if (typeof data.day === "object") {
+      //플리마켓에는 day가 array라서 이렇게 했습니다...
+      for (let d of data.day) {
+        if (dayConverter(d) === selectedDay || selectedDay === "") {
           result.push(
             <Element
               key={data.id}
@@ -83,10 +83,7 @@ export const pushData = (
           break;
         }
       }
-      
-    }
-
-    else if (dayConverter(data.day) === selectedDay || selectedDay === "") {
+    } else if (dayConverter(data.day) === selectedDay || selectedDay === "") {
       result.push(
         <Element
           key={data.id}
@@ -109,56 +106,4 @@ export const findData = (datas, id) => {
       return data;
     }
   }
-};
-
-export const Timer = () => {
-  const [timeState, setTimeState] = useState({
-    days: 0,
-    hours: 0,
-    mins: 0,
-    secs: 0,
-  });
-
-  const leading0 = (num) => {
-    return num < 10 ? "0" + num : num;
-  };
-  const getTimeUntil = () => {
-    const dueDay = new Date("2022-09-19");
-    const currentTime = new Date();
-    const koreaTimeDiff = 9 * 60 * 60 * 1000;
-    const time = dueDay - currentTime - koreaTimeDiff;
-    if (time < 0) {
-      setTimeState({
-        days: 0,
-        hours: 0,
-        mins: 0,
-        secs: 0,
-      });
-    } else {
-      const diffDay = Math.floor(time / (1000 * 60 * 60 * 24));
-      const diffHour = Math.floor((time / (1000 * 60 * 60)) % 24);
-      const diffMin = Math.floor((time / 1000 / 60) % 60);
-      const diffSec = Math.floor((time / 1000) % 60);
-      setTimeState({
-        days: diffDay,
-        hours: diffHour,
-        mins: diffMin,
-        secs: diffSec,
-      });
-    }
-  };
-  useEffect(() => {
-    setInterval(() => getTimeUntil(), 1000);
-
-    return () => getTimeUntil();
-  }, []);
-  return (
-    <div style={{ marginTop: "20px" }}>
-      <div style={{ fontSize: "70px" }}>{`D-${timeState.days}`}</div>
-      <div style={{ fontSize: "30px" }}>
-        {leading0(timeState.hours)}:{leading0(timeState.mins)}:
-        {leading0(timeState.secs)}
-      </div>
-    </div>
-  );
 };

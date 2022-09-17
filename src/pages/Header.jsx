@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { HeaderDiv, HeaderLogo, Nav, FlexUl, Li } from "../styledComponent";
-import logo from "../images/header-logo.png";
+import logo from "../images/header/header-logo.png";
 
 const Header = () => {
   // nav의 요소들을 클릭하면 각각의 url로 navigate

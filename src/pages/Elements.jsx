@@ -49,15 +49,17 @@ export const FleaComponentDiv = (props) => {
     //   {props.data.name}
     // </div>
     <DescCard
-    onClick={() => {
-      props.setShowModal(true);
-      props.setSelectedID(props.data.id);
-    }}
-  >
-    <DescCardNumber><div>{props.data.id}</div></DescCardNumber>
-    <DescCardName>{props.data.name}</DescCardName>
-    <DescCardDetail>자세히</DescCardDetail>
-  </DescCard>
+      onClick={() => {
+        props.setShowModal(true);
+        props.setSelectedID(props.data.id);
+      }}
+    >
+      <DescCardNumber>
+        <div>{props.data.id}</div>
+      </DescCardNumber>
+      <DescCardName>{props.data.name}</DescCardName>
+      <DescCardDetail>+</DescCardDetail>
+    </DescCard>
   );
 };
 
@@ -69,9 +71,11 @@ export const FoodComponentDiv = (props) => {
         props.setSelectedID(props.data.id);
       }}
     >
-      <DescCardNumber><div>{props.data.id}</div></DescCardNumber>
+      <DescCardNumber>
+        <div>{props.data.id}</div>
+      </DescCardNumber>
       <DescCardName>{props.data.name}</DescCardName>
-      <DescCardDetail>자세히</DescCardDetail>
+      <DescCardDetail>+</DescCardDetail>
     </DescCard>
   );
 };

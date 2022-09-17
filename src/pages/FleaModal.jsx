@@ -2,16 +2,16 @@ import React from "react";
 import {
   ModalOuterDiv,
   ModalInnerDiv,
-  FoodModalPopup,
+  FleaModalPopup,
   FoodImg,
-  FoodNameTag,
+  FleaNameTag,
 } from "../styledComponent";
 import "../images/food/close_icon.css";
 // 모달에 데이터를 넘겨주고 필요한 데이터를 출력하도록 한다.
 // 모달 클릭 후 아무데나 누르면 모달이 사라지도록 하였다.
 const FoodModal = (props) => {
   return (
-    <FoodModalPopup
+    <FleaModalPopup
       onClick={() => {
         props.setShowModal(false);
       }}
@@ -31,28 +31,28 @@ const FoodModal = (props) => {
       )}
 
       <div style={{ position: "relative" }}>
-        <FoodNameTag></FoodNameTag>
+        <FleaNameTag></FleaNameTag>
         <div
           style={{
             position: "absolute",
             textAlign: "center",
-            top: "50%",
-            left: "50%",
+            top: "62px",
+            left: "160px",
             transform: "translate( -50%, -50% )",
             fontFamily: "GungSeo",
             fontWeight: "400",
-            fontSize: "15px",
+            fontSize: "12px",
           }}
         >
           {props.data.name}
         </div>
       </div>
-      <p style={{ marginTop: "28px", marginLeft: "60px", fontSize: "15px" }}>
+      <p style={{ marginTop: "95px", fontSize: "13px", marginLeft: "100px" }}>
         {props.data.date}
       </p>
-      <p style={{ marginTop: "40px", fontSize: "30px" }}>{props.data.menu}</p>
+      <p style={{ marginTop: "20px", fontSize: "30px" }}>{props.data.detail}</p>
       {/* <p>{props.data.detail}</p> */}
-    </FoodModalPopup>
+    </FleaModalPopup>
   );
 };
 

@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <FooterDiv>
       <div>
-        총학생회 비상대책 위원회 X 멋쟁이 사자
+        총학생회 비상대책 위원회 X 멋쟁이 사자처럼
         <div>
           &copy; 2022.
           <strong>

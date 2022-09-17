@@ -1,15 +1,23 @@
 import React from "react";
+import { FlexUl } from "../styledComponent";
 
-const EventItem = ({ id, name, date, src, detail }) => {
+const EventItem = ({ id, name, date, src, detail, place }) => {
   return (
-    <div style={{ width: "100%", margin: "40px 0px" }}>
-      <span style={{ width: "100%", textAlign: "left" }}>
-        {name}
-        {date}
-      </span>
+    <div style={{ width: "93%", margin: "40px auto" }}>
+      <div
+        style={{
+          display: "flex",
+          marginBottom: "20px",
+          justifyContent: "space-between",
+        }}
+      >
+        <div>{name}</div>
+        <div>{place}</div>
+        <div>{date}</div>
+      </div>
       <div>
         <img
-          style={{ width: "400px", height: "100px", objectFit: "cover" }}
+          style={{ width: "400px", height: "150px", objectFit: "cover" }}
           src={require(`../images/home/${src}`)}
           alt={name}
         />
