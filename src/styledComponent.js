@@ -181,7 +181,7 @@ export const DayContainerDiv = styled.div`
 `;
 
 export const DayDiv = styled.div`
-  margin: 1px;
+  margin: 3px;
 `;
 
 // 모달 포지셔닝을 위한 divs
@@ -421,7 +421,25 @@ export const FleaBlood = styled.img`
 
 //공연일정 divs
 export const MainScheduleDiv = styled.div`
-  background-color: black;
+  position: relative;
+  background-image: url(${background});
+  background-repeat:no-repeat;
+  background-size: 100%;
+  backdrop-filter: blur(1000px);
+  .noResult{
+    height:40vh;
+    line-height:40vh;
+    font-size:25px;
+  }
+  
+  .today{
+    height:30px;
+    padding-left:10%;
+    line-height: 30px;
+    font-size:20px;
+    font-weight: 100;
+    text-align: left;
+  }
 `;
 export const ScheduleContainerDIv = styled.div``;
 export const ScheduleSpan = styled.div`
@@ -508,3 +526,61 @@ export const ItemImg = styled.img`
   object-fit: cover;
   z-index: 1;
 `;
+
+//schedule page resources
+export const RoundImgContainer = styled.div`
+width:calc(${props => props.height});
+height:calc(${props => props.height});
+display: flex;
+justify-content:center;
+align-items: center;
+border-radius:1000px;
+border:solid 3px #620303;
+overflow: hidden;
+img{
+  width:100%;
+}
+`
+export const SquareImgContainer = styled.div`
+width:calc(${props => props.width});
+height:calc(${props => props.height});
+display: flex;
+justify-content:center;
+align-items: center;
+border:solid 3px #620303;
+overflow: hidden;
+img{
+  width:100%;
+}
+`
+
+export const TeamName = styled.div`
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+  .name{
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .text{
+    font-size: 10px;
+
+  }
+
+`
+export const TeamBlock = styled.div`
+margin:40px auto;
+width:80%;
+display:flex;
+flex-direction: ${props => props.even ? "row" : "row-reverse"};
+justify-content: flex-start;
+align-items: center;
+img{
+  display: block;
+}
+.handImg{
+  width:35px;
+  height:35px;
+  margin:0 15px;
+}
+`
