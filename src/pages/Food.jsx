@@ -36,7 +36,7 @@ const Food = () => {
           margin: "0px auto",
           position: "absolute",
           zIndex: "0",
-          height: "100%",
+          height: "400px",
           width: "100%",
           backgroundColor: "rgba(0, 0, 0, 0.67)",
         }}
