@@ -26,7 +26,7 @@ const FoodModal = (props) => {
         <></>
       ) : (
         <FoodImg
-          src={require("../images/food/food" + props.data.id + ".jpeg")}
+          src={require("../images/food/food" + props.data.id + ".jpg")}
         ></FoodImg>
       )}
 
