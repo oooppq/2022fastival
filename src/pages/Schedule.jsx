@@ -15,6 +15,7 @@ import {
   SquareImgContainer,
 } from "../styledComponent";
 import { ScheduleComponentDiv } from "./Elements";
+import { useScrollToCG, useScrollToDW } from "../useScroll";
 import {
   dayConverter,
   pushDayDiv,
@@ -70,7 +71,8 @@ const DwBoxStyle = styled.div`
 const Schedule = () => {
   // 요일 선택을 반영하기 위해 useState로 구현
   //defaultDay를 하면 아무것도 안나와서 기본값을 1로 조정
-
+  const { scrollToCG, onMoveToCG } = useScrollToCG();
+  const { scrollToDW, onMoveToDW } = useScrollToDW();
   const [selectedDay, setSelectedDay] = useState(dayConverter(1));
   const [showModal, setShowModal] = useState(false);
   const [selectedID, setSelectedID] = useState(1);
@@ -284,6 +286,10 @@ const Schedule = () => {
         selectedDay,
         setShowModal,
         setSelectedID,
+        scrollToCG,
+        scrollToDW,
+        onMoveToCG,
+        onMoveToDW
       )} */}
     </MainScheduleDiv>
   );

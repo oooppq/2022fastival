@@ -183,7 +183,12 @@ export const DayContainerDiv = styled.div`
 `;
 
 export const DayDiv = styled.div`
+<<<<<<< HEAD
   margin: 3px;
+=======
+  padding-right: 7px;
+  margin: 1px;
+>>>>>>> 33c0993eb0c90b2118075c2956f5018a1541c057
 `;
 
 // 모달 포지셔닝을 위한 divs
