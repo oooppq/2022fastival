@@ -14,7 +14,7 @@ import {
   dayOnClick,
   getDefaultDay,
   pushData,
-  findData,
+  findFoodData,
 } from "../utils";
 import { FoodComponentDiv } from "./Elements";
 import MapTable from "./MapTable";
@@ -111,7 +111,7 @@ const Food = () => {
       {showModal && (
         <FoodModal
           setShowModal={setShowModal}
-          data={findData(foods, selectedID)}
+          data={findFoodData(foods, selectedID)}
           type={"food"}
         ></FoodModal>
       )}

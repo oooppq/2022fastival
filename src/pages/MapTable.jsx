@@ -7,6 +7,7 @@ const MapTable = (prop) => {
         onClick={() => {
           prop.setShowModal(true);
           prop.setSelectedID(prop.id);
+          prop.setSelectName(prop.name);
         }}
         style={{ cursor: "pointer" }}
       >

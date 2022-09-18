@@ -85,8 +85,12 @@ export const FlexUl = styled.ul`
 `;
 
 export const Li = styled.li`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20px 3px;
   width: 100px;
+  height: 80px;
   font-size: 16px;
 
   @media only screen and (min-width: 380px) {
@@ -96,13 +100,18 @@ export const Li = styled.li`
 `;
 
 export const SpecailLi = styled.li`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20px 3px;
   width: 100px;
+  height: 80px;
   font-size: 15px;
 
   @media only screen and (min-width: 380px) {
-    font-size: 19px;
-    width: 120px;
+    font-size: 21px;
+    top: -1px;
+    width: 130px;
   }
 `;
 

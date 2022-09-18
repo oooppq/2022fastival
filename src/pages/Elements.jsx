@@ -44,6 +44,7 @@ export const FleaComponentDiv = (props) => {
       onClick={() => {
         props.setShowModal(true);
         props.setSelectedID(props.data.id);
+        props.setSelectName(props.data.name);
       }}
     >
       <div style={{ display: "flex", alignItems: "center" }}>

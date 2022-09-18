@@ -9,7 +9,7 @@ import {
   FleaMapTableContainer,
   FleaBlood,
 } from "../styledComponent";
-import { findData } from "../utils";
+import { findFleaData } from "../utils";
 import { FleaComponentDiv } from "./Elements";
 import fleamap from "../images/flea/flea_map.png";
 import MapTable from "./MapTable";
@@ -19,6 +19,7 @@ const Flea = () => {
   // 요일 선택을 반영하기 위해 useState로 구현
   const [showModal, setShowModal] = useState(false);
   const [selectedID, setSelectedID] = useState(1);
+  const [selectName, setSelectName] = useState("");
   const dayList = ["월~수", "목~금"];
   const [currentDay, setCurrentDay] = useState("월~수");
   const setDayHandler = (event) => {
@@ -121,6 +122,7 @@ const Flea = () => {
                     setShowModal={setShowModal}
                     setSelectedID={setSelectedID}
                     Styled={FleaMapTableContainer}
+                    setSelectName={setSelectName}
                   />
                 ) : (
                   <></>
@@ -137,6 +139,7 @@ const Flea = () => {
                     setShowModal={setShowModal}
                     setSelectedID={setSelectedID}
                     Styled={FleaMapTableContainer}
+                    setSelectName={setSelectName}
                   />
                 ) : (
                   <></>
@@ -155,6 +158,7 @@ const Flea = () => {
             data={flea}
             setShowModal={setShowModal}
             setSelectedID={setSelectedID}
+            setSelectName={setSelectName}
           >
             {flea.name}
           </FleaComponentDiv>
@@ -166,7 +170,7 @@ const Flea = () => {
       {showModal && (
         <FleaModal
           setShowModal={setShowModal}
-          data={findData(fleas, selectedID)}
+          data={findFleaData(fleas, selectedID, selectName)}
           type={"flea"}
         ></FleaModal>
       )}
