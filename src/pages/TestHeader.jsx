@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import {
   HeaderDiv,
   HeaderLogo,
+  HeaderTestDiv,
   Nav,
   FlexUl,
   Li,
@@ -10,29 +11,30 @@ import {
 import logo from "../images/header/header-logo.png";
 import Blood from "../images/blood.png";
 
-const Header = () => {
+const Header = ({ setStyled }) => {
   // nav에 들어갈 요소들을 추가해줌
   // 각각의 url에 진입하면 해당하는 menu component의 background가 red가 되도록 해놓음
   // 핏자국 background image 갖도록 수정 필요
   const [showBlood, setShowBlood] = useState("");
-
   const handleBlood = (e) => {
     setShowBlood(e.target.innerText);
+    setStyled(e.target.innerText);
   };
 
   const hideBlood = () => {
     setShowBlood("");
+    setStyled("");
   };
   return (
     <HeaderDiv>
-      <StyledLink to="/" onClick={hideBlood}>
-        <HeaderLogo src={logo}></HeaderLogo>
+      <StyledLink to="/">
+        <HeaderLogo src={logo} onClick={hideBlood}></HeaderLogo>
       </StyledLink>
       <Nav>
         <FlexUl>
           <StyledLink to="/flea">
             <Li
-              style={{ zIndex: "1", position: "relative" }}
+              style={{ zIndex: "1", position: "relative", fontSize: "15px" }}
               onClick={handleBlood}
             >
               플리마켓/마당
@@ -42,7 +44,7 @@ const Header = () => {
                 style={{
                   width: "80px",
                   position: "absolute",
-                  top: "-15px",
+                  top: "-12px",
                   left: "20px",
                   zIndex: "0",
                 }}
@@ -64,8 +66,8 @@ const Header = () => {
                 style={{
                   width: "80px",
                   position: "absolute",
-                  top: "-15px",
-                  left: "20px",
+                  top: "-12px",
+                  left: "16px",
                   zIndex: "0",
                 }}
                 src={Blood}
@@ -86,8 +88,8 @@ const Header = () => {
                 style={{
                   width: "80px",
                   position: "absolute",
-                  top: "-15px",
-                  left: "20px",
+                  top: "-12px",
+                  left: "16px",
                   zIndex: "0",
                 }}
                 src={Blood}

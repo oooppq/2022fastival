@@ -17,40 +17,43 @@ const FoodModal = (props) => {
       }}
     >
       <span
-        style={{ position: "absolute", right: "10px", top: "10px" }}
-        class="material-symbols-outlined"
+        style={{
+          position: "absolute",
+          right: "10px",
+          top: "10px",
+          color: "black",
+        }}
+        className="material-symbols-outlined"
       >
         close
       </span>
-      {props.type === "flea" ? (
-        <></>
-      ) : (
-        <FoodImg
-          src={require("../images/food/food" + props.data.id + ".jpeg")}
-        ></FoodImg>
-      )}
 
       <div style={{ position: "relative" }}>
-        <FleaNameTag></FleaNameTag>
         <div
           style={{
-            position: "absolute",
             textAlign: "center",
-            top: "62px",
-            left: "160px",
-            transform: "translate( -50%, -50% )",
-            fontFamily: "GungSeo",
+            color: "black",
             fontWeight: "400",
-            fontSize: "12px",
+            fontSize: "28px",
+            marginTop: "70px",
           }}
         >
-          {props.data.name}
+          {`< ${props.data.name} >`}
+          <p
+            style={{
+              margin: "20px 0px 0px 0px",
+              fontSize: "20px",
+              color: "black",
+            }}
+          >
+            {props.data.detail}
+          </p>
+          <p style={{ margin: "0px", fontSize: "14px", color: "black" }}>
+            {props.data.date}
+          </p>
         </div>
       </div>
-      <p style={{ marginTop: "95px", fontSize: "13px", marginLeft: "100px" }}>
-        {props.data.date}
-      </p>
-      <p style={{ marginTop: "20px", fontSize: "30px" }}>{props.data.detail}</p>
+
       {/* <p>{props.data.detail}</p> */}
     </FleaModalPopup>
   );

@@ -22,35 +22,29 @@ const FoodModal = (props) => {
       >
         close
       </span>
-      {props.type === "flea" ? (
-        <></>
-      ) : (
-        <FoodImg
-          src={require("../images/food/food" + props.data.id + ".jpeg")}
-        ></FoodImg>
-      )}
-
-      <div style={{ position: "relative" }}>
-        <FoodNameTag></FoodNameTag>
-        <div
-          style={{
-            position: "absolute",
-            textAlign: "center",
-            top: "50%",
-            left: "50%",
-            transform: "translate( -50%, -50% )",
-            fontFamily: "GungSeo",
-            fontWeight: "400",
-            fontSize: "15px",
-          }}
-        >
-          {props.data.name}
-        </div>
+      <div
+        style={{
+          textAlign: "center",
+          color: "black",
+          fontWeight: "400",
+          fontSize: "28px",
+          marginTop: "50px",
+        }}
+      >
+        {`< ${props.data.name} >`}
       </div>
-      <p style={{ marginTop: "28px", marginLeft: "60px", fontSize: "15px" }}>
+      <FoodImg
+        src={require("../images/food/food" + props.data.id + ".jpeg")}
+      ></FoodImg>
+      <p
+        style={{ fontSize: "25px", margin: "10px 0px 0px 0px", color: "black" }}
+      >
+        {props.data.menu}
+      </p>
+      <p style={{ fontSize: "20px", margin: "0px", color: "black" }}>
         {props.data.date}
       </p>
-      <p style={{ marginTop: "40px", fontSize: "30px" }}>{props.data.menu}</p>
+
       {/* <p>{props.data.detail}</p> */}
     </FoodModalPopup>
   );
