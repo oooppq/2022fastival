@@ -6,6 +6,7 @@ import {
   Nav,
   FlexUl,
   Li,
+  SpecailLi,
   StyledLink,
 } from "../styledComponent";
 import logo from "../images/header/header-logo.png";
@@ -33,12 +34,12 @@ const Header = ({ setStyled }) => {
       <Nav>
         <FlexUl>
           <StyledLink to="/flea">
-            <Li
-              style={{ zIndex: "1", position: "relative", fontSize: "15px" }}
+            <SpecailLi
+              style={{ zIndex: "1", position: "relative" }}
               onClick={handleBlood}
             >
               플리마켓/마당
-            </Li>
+            </SpecailLi>
             {showBlood === "플리마켓/마당" ? (
               <img
                 style={{

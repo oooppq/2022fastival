@@ -88,6 +88,22 @@ export const Li = styled.li`
   padding: 20px 3px;
   width: 100px;
   font-size: 16px;
+
+  @media only screen and (min-width: 380px) {
+    width: 120px;
+    font-size: 22px;
+  }
+`;
+
+export const SpecailLi = styled.li`
+  padding: 20px 3px;
+  width: 100px;
+  font-size: 15px;
+
+  @media only screen and (min-width: 380px) {
+    font-size: 21px;
+    width: 130px;
+  }
 `;
 
 export const BlackBg = styled.div`

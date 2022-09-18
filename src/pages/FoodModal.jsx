@@ -34,7 +34,7 @@ const FoodModal = (props) => {
         {`< ${props.data.name} >`}
       </div>
       <FoodImg
-        src={require("../images/food/food" + props.data.id + ".jpeg")}
+        src={require("../images/food/food" + props.data.id + ".jpg")}
       ></FoodImg>
       <p
         style={{ fontSize: "25px", margin: "10px 0px 0px 0px", color: "black" }}

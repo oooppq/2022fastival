@@ -84,6 +84,7 @@ const Flea = () => {
             {dayList.map((day) => {
               return (
                 <div
+                  key={day}
                   style={{
                     textAlign: "right",
                     marginLeft: "15px",
