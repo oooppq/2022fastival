@@ -410,23 +410,7 @@ min-height:700px;
   background-image: url(${background});
   background-repeat:no-repeat;
   background-size: 100%;
-  backdrop-filter:brightness(500px);
-  /* *{
-    z-index: 1;
-    background: transparent;
-  }
-  :before{
-    content: "";
-    position: absolute;
-    top:0;
-    left:0;
-    background-image: url(${background});
-  background-repeat:no-repeat;
-  background-size: 100%;
-  width:100%;
-  height:100%;
-  z-index: 0;
-  } */
+  
   .noResult{
     height:40vh;
     line-height:40vh;
