@@ -101,8 +101,8 @@ export const SpecailLi = styled.li`
   font-size: 15px;
 
   @media only screen and (min-width: 380px) {
-    font-size: 21px;
-    width: 130px;
+    font-size: 1px;
+    width: 120px;
   }
 `;
 
@@ -325,8 +325,8 @@ export const FleaMapTableContainer = styled.div`
 `;
 
 export const FleaModalPopup = styled.div`
-  height: 200px;
-  width: 317px;
+  height: 230px;
+  width: 320px;
   left: 51px;
   top: 186px;
   border-radius: 7px;
@@ -334,7 +334,8 @@ export const FleaModalPopup = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: url(${fleaModalBg}) no-repeat;
+  background: url(${fleaModalBg});
+  background-repeat: no-repeat;
   background-size: cover;
   z-index: 100;
 `;
