@@ -34,8 +34,8 @@ export const schedules = [
     type: "동아리 공연",
     time: "18:00-19:00",
     day: 1,
-    backgroundImage: `${process.env.PUBLIC_URL}/schedule/풍연.png`,
-    script: "풍물패 연합"
+    backgroundImage: "풍연.png",
+    script: "풍물패 연합",
   },
   {
     id: 2,
@@ -45,8 +45,8 @@ export const schedules = [
     type: "버스킹 공연",
     time: "쉬는시간",
     day: 4,
-    backgroundImage: `${process.env.PUBLIC_URL}/schedule/서강진스.png`,
-    script: "서강진스"
+    backgroundImage: `서강진스.png`,
+    script: "서강진스",
   },
   {
     id: 3,
@@ -55,7 +55,7 @@ export const schedules = [
     type: "버스킹 공연",
     time: "쉬는시간",
     day: 4,
-    backgroundImage: `${process.env.PUBLIC_URL}/schedule/사발로마.png`,
+    backgroundImage: `사발로마.png`,
   },
   {
     id: 4,
@@ -64,7 +64,7 @@ export const schedules = [
     type: "버스킹 공연",
     time: "쉬는시간",
     day: 4,
-    backgroundImage: `${process.env.PUBLIC_URL}/schedule/온빛.png`,
+    backgroundImage: `온빛.png`,
   },
   {
     id: 5,
@@ -73,7 +73,7 @@ export const schedules = [
     type: "버스킹 공연",
     time: "쉬는시간",
     day: 4,
-    backgroundImage: `${process.env.PUBLIC_URL}/schedule/박장대소.png`,
+    backgroundImage: `박장대소.png`,
   },
   {
     id: 6,
@@ -82,7 +82,7 @@ export const schedules = [
     type: "서강 가왕",
     time: "19:00-21:00",
     day: 4,
-    backgroundImage: `${process.env.PUBLIC_URL}/schedule/서강가왕.jpg`,
+    backgroundImage: `서강가왕.png`,
   },
   {
     id: 7,
@@ -91,7 +91,7 @@ export const schedules = [
     type: "연예인 공연",
     time: "21:00-22:00",
     day: 4,
-    backgroundImage: `${process.env.PUBLIC_URL}/schedule/콜드.jpg`,
+    backgroundImage: `콜드.png`,
   },
   {
     id: 8,
@@ -100,7 +100,7 @@ export const schedules = [
     type: "연예인 공연",
     time: "21:00-22:00",
     day: 4,
-    backgroundImage: `${process.env.PUBLIC_URL}/schedule/민경훈.jpg`,
+    backgroundImage: `민경훈.png`,
   },
   {
     id: 9,
@@ -110,7 +110,7 @@ export const schedules = [
     type: "버스킹 공연",
     time: "쉬는시간",
     day: 5,
-    backgroundImage: `${process.env.PUBLIC_URL}/schedule/이승원.png`,
+    backgroundImage: `이승원.png`,
   },
   {
     id: 10,
@@ -119,7 +119,7 @@ export const schedules = [
     type: "버스킹 공연",
     time: "쉬는시간",
     day: 5,
-    backgroundImage: `${process.env.PUBLIC_URL}/schedule/크레센도.png`,
+    backgroundImage: `크레센도.png`,
   },
   {
     id: 11,
@@ -128,7 +128,7 @@ export const schedules = [
     type: "버스킹 공연",
     time: "쉬는시간",
     day: 5,
-    backgroundImage: `${process.env.PUBLIC_URL}/schedule/크레이즈.png`,
+    backgroundImage: `크레이즈.png`,
   },
   {
     id: 12,
@@ -137,7 +137,7 @@ export const schedules = [
     type: "동아리 공연",
     time: "16:00-20:00",
     day: 5,
-    backgroundImage: `${process.env.PUBLIC_URL}/schedule/풍연.png`,
+    backgroundImage: `풍연.png`,
   },
   {
     id: 13,
@@ -146,7 +146,7 @@ export const schedules = [
     type: "동아리 공연",
     time: "16:00-20:00",
     day: 5,
-    backgroundImage: `${process.env.PUBLIC_URL}/schedule/샥 장표.png`,
+    backgroundImage: `샥 장표.png`,
   },
   {
     id: 14,
@@ -155,7 +155,7 @@ export const schedules = [
     type: "동아리 공연",
     time: "16:00-20:00",
     day: 5,
-    backgroundImage: `${process.env.PUBLIC_URL}/schedule/마이티 장표.jpeg`,
+    backgroundImage: "마이티 장표.png",
   },
   {
     id: 15,
@@ -164,7 +164,7 @@ export const schedules = [
     type: "동아리 공연",
     time: "16:00-20:00",
     day: 5,
-    backgroundImage: `${process.env.PUBLIC_URL}/schedule/에밀레 장표.jpeg`,
+    backgroundImage: `에밀레 장표.png`,
   },
   {
     id: 16,
@@ -173,7 +173,7 @@ export const schedules = [
     type: "동아리 공연",
     time: "16:00-20:00",
     day: 5,
-    backgroundImage: `${process.env.PUBLIC_URL}/schedule/광야 장표.png`,
+    backgroundImage: `광야 장표.png`,
   },
   {
     id: 17,
@@ -182,7 +182,7 @@ export const schedules = [
     type: "동아리 공연",
     time: "16:00-20:00",
     day: 5,
-    backgroundImage: `${process.env.PUBLIC_URL}/schedule/맥박 장표.jpeg`,
+    backgroundImage: `맥박 장표.png`,
   },
   {
     id: 18,
@@ -191,7 +191,7 @@ export const schedules = [
     type: "동아리 공연",
     time: "16:00-20:00",
     day: 5,
-    backgroundImage: `${process.env.PUBLIC_URL}/schedule/킨젝스 장표.jpeg`,
+    backgroundImage: `킨젝스 장표.png`,
   },
   {
     id: 19,
@@ -200,7 +200,7 @@ export const schedules = [
     type: "동아리 공연",
     time: "16:00-20:00",
     day: 5,
-    backgroundImage: `${process.env.PUBLIC_URL}/schedule/어비스 장표 (검정색).jpeg`,
+    backgroundImage: `어비스 장표 (검정색).png`,
   },
   {
     id: 20,
@@ -209,7 +209,7 @@ export const schedules = [
     type: "동아리 공연",
     time: "16:00-20:00",
     day: 5,
-    backgroundImage: `${process.env.PUBLIC_URL}/schedule/메시지 장표.jpeg`,
+    backgroundImage: `메시지 장표.png`,
   },
   {
     id: 21,
@@ -218,7 +218,7 @@ export const schedules = [
     place: "대운동장",
     time: "20:05-20:35",
     day: 5,
-    backgroundImage: `${process.env.PUBLIC_URL}/schedule/트라이파시 장표.jpeg`,
+    backgroundImage: `트라이파시 장표.png`,
   },
   {
     id: 22,
@@ -227,7 +227,7 @@ export const schedules = [
     place: "대운동장",
     time: "20:35-23:00",
     day: 5,
-    backgroundImage: `${process.env.PUBLIC_URL}/schedule/홀리뱅.jpeg`,
+    backgroundImage: `홀리뱅.png`,
   },
   {
     id: 23,
@@ -236,7 +236,7 @@ export const schedules = [
     place: "대운동장",
     time: "20:35-23:00",
     day: 5,
-    backgroundImage: `${process.env.PUBLIC_URL}/schedule/MVP.jpeg`,
+    backgroundImage: `MVP.png`,
   },
   {
     id: 24,
@@ -245,21 +245,21 @@ export const schedules = [
     place: "대운동장",
     time: "20:35-23:00",
     day: 5,
-    backgroundImage: `${process.env.PUBLIC_URL}/schedule/박재범.jpg`,
+    backgroundImage: `박재범.png`,
   },
   {
     id: 25,
     name: "9.20 Tue",
     date: "9.20 Tue",
     day: 2,
-    backgroundImage: `${process.env.PUBLIC_URL}/schedule/9.20.png`,
+    backgroundImage: `9.20.png`,
   },
   {
     id: 26,
     name: "9.21 Wed",
     date: "9.21 Wed",
     day: 3,
-    backgroundImage: `${process.env.PUBLIC_URL}/schedule/9.21.png`,
+    backgroundImage: `9.21.png`,
   },
 ];
 
