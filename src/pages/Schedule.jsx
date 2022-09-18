@@ -28,12 +28,13 @@ let defaultDay = getDefaultDay();
 
 const CgBoxStyle = styled.div`
   div{
-    font-size:16px;
+    font-size:20px;
     margin-bottom:50px;
   }
   .title{
-    font-size: 32px;
+    font-size: 40px;
     margin:10px;
+
   }
 `
 const DwBoxStyle = styled.div`
@@ -45,7 +46,8 @@ const DwBoxStyle = styled.div`
     margin-bottom: 50px;
     .time{
       color:#620303;
-      font-size: 24px;
+      font-size: 28px;
+      font-weight: 600;
       
     }
   }

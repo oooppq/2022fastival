@@ -405,11 +405,28 @@ export const FleaEachDay = styled.div`
 
 //공연일정 divs
 export const MainScheduleDiv = styled.div`
+min-height:700px;
   position: relative;
   background-image: url(${background});
   background-repeat:no-repeat;
   background-size: 100%;
-  backdrop-filter: blur(1000px);
+  backdrop-filter:brightness(500px);
+  /* *{
+    z-index: 1;
+    background: transparent;
+  }
+  :before{
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    background-image: url(${background});
+  background-repeat:no-repeat;
+  background-size: 100%;
+  width:100%;
+  height:100%;
+  z-index: 0;
+  } */
   .noResult{
     height:40vh;
     line-height:40vh;
@@ -417,13 +434,14 @@ export const MainScheduleDiv = styled.div`
   }
   
   .today{
-    height:30px;
+    height:50px;
     padding-left:10%;
-    line-height: 30px;
-    font-size:20px;
+    line-height: 20px;
+    font-size:28px;
     font-weight: 100;
     text-align: left;
   }
+  
 `;
 export const ScheduleContainerDIv = styled.div``;
 export const ScheduleSpan = styled.div`
@@ -527,7 +545,8 @@ img{
 `
 export const SquareImgContainer = styled.div`
 width:calc(${props => props.width});
-height:calc(${props => props.height});
+/* height:calc(${props => props.height}); */
+max-height: 400px;
 display: flex;
 justify-content:center;
 align-items: center;
