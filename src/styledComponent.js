@@ -145,6 +145,7 @@ export const DayContainerDiv = styled.div`
 `;
 
 export const DayDiv = styled.div`
+  padding-right: 7px;
   margin: 1px;
 `;
 

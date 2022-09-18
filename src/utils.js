@@ -63,13 +63,13 @@ export const pushData = (
   selectedDay,
   setShowModal,
   setSelectedID,
+  scrollToCG,
   scrollToDW,
-  scrollToCG
+  onMoveToCG,
+  onMoveToDW
 ) => {
   let result = [];
-  console.log('scdw', scrollToDW)
   for (let [idx, data] of datas.entries()) {
-    console.log(idx)
     if (typeof data.day === "object") {
       //플리마켓에는 day가 array라서 이렇게 했습니다...
       for (let d of data.day) {
@@ -88,11 +88,19 @@ export const pushData = (
         }
       }
     } else if (dayConverter(data.day) === selectedDay || selectedDay === "") {
-      if(idx===1) {
-        result.push(<div ref={scrollToCG}>청년광장</div>)
+      if (idx === 1 || 8) {
+        result.push(
+          <div>
+            <span onClick={onMoveToCG}>청년광장 보기 /</span>
+            <span onClick={onMoveToDW}> 대운동장 보기</span>
+          </div>
+        );
       }
-      if(idx===5) {
-        result.push(<div ref={scrollToDW}>대운동장</div>)
+      if (idx === 1 || idx === 8) {
+        result.push(<div ref={scrollToCG}></div>);
+      }
+      if (idx === 5 || idx === 11) {
+        result.push(<div ref={scrollToDW}></div>);
       }
       result.push(
         <Element

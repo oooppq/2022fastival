@@ -1,12 +1,18 @@
-import { useRef } from 'react';
+import { useRef } from "react";
 
 //hook
-function useScroll() {
-  const scrollToElement = useRef(null);
-  const onMoveToElement = () => {
-    scrollToElement.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+export const useScrollToCG = () => {
+  const scrollToCG = useRef(null);
+  const onMoveToCG = () => {
+    scrollToCG.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
-  return { scrollToElement, onMoveToElement};
-}
+  return { scrollToCG, onMoveToCG };
+};
 
-export default useScroll;
+export const useScrollToDW = () => {
+  const scrollToDW = useRef(null);
+  const onMoveToDW = () => {
+    scrollToDW.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+  return { scrollToDW, onMoveToDW };
+};
