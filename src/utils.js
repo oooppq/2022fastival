@@ -88,20 +88,20 @@ export const pushData = (
         }
       }
     } else if (dayConverter(data.day) === selectedDay || selectedDay === "") {
-      if (idx === 1 || 8) {
-        result.push(
-          <div>
-            <span onClick={onMoveToCG}>청년광장 보기 /</span>
-            <span onClick={onMoveToDW}> 대운동장 보기</span>
-          </div>
-        );
-      }
-      if (idx === 1 || idx === 8) {
-        result.push(<div ref={scrollToCG}></div>);
-      }
-      if (idx === 5 || idx === 11) {
-        result.push(<div ref={scrollToDW}></div>);
-      }
+      // if (idx === 1 || 8) {
+      //   result.push(
+      //     <div>
+      //       <span onClick={onMoveToCG}>청년광장 보기 /</span>
+      //       <span onClick={onMoveToDW}> 대운동장 보기</span>
+      //     </div>
+      //   );
+      // }
+      // if (idx === 1 || idx === 8) {
+      //   result.push(<div ref={scrollToCG}></div>);
+      // }
+      // if (idx === 5 || idx === 11) {
+      //   result.push(<div ref={scrollToDW}></div>);
+      // }
       result.push(
         <Element
           key={data.id}
