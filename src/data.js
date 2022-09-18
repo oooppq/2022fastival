@@ -30,7 +30,7 @@ export const schedules = [
     id: 1,
     name: "풍연",
     date: "9.19 Mon",
-    place: "대운동장",
+    place: "청년광장 기청제",
     type: "동아리 공연",
     time: "18:00-19:00",
     day: 1,
