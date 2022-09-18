@@ -33,11 +33,11 @@ let defaultDay = getDefaultDay();
 
 const CgBoxStyle = styled.div`
   div {
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 50px;
   }
   .title {
-    font-size: 32px;
+    font-size: 40px;
     margin: 10px;
   }
 `;
@@ -50,7 +50,8 @@ const DwBoxStyle = styled.div`
     margin-bottom: 50px;
     .time {
       color: #620303;
-      font-size: 24px;
+      font-size: 28px;
+      font-weight: 600;
     }
   }
 
@@ -217,13 +218,25 @@ const Schedule = () => {
   }, [selectedDay]);
   return (
     <MainScheduleDiv>
-      <DayContainerDiv>
+      <div
+        style={{
+          margin: "0px auto",
+          position: "absolute",
+          zIndex: "0",
+          height: "400px",
+          width: "100%",
+          backgroundColor: "rgba(0, 0, 0, 0.67)",
+        }}
+      ></div>
+      <DayContainerDiv
+        style={{ fontSize: "25px", zIndex: "1", position: "relative" }}
+      >
         {/* 요일을 추가, onclick event는 parameter 전달을 위해 화살표 함수로 구현 */}
         {pushDayDiv(selectedDay, (e) => {
           dayOnClick(setSelectedDay, e);
         })}
       </DayContainerDiv>
-      <div className="today">
+      <div className="today" style={{ zIndex: "1", position: "relative" }}>
         {
           dataArray[
             ["일", "월", "화", "수", "목", "금", "토"].indexOf(selectedDay) - 1
@@ -231,19 +244,21 @@ const Schedule = () => {
         }
       </div>
       {CgBoxList.length > 0 && (
-        <CgBoxStyle>
+        <CgBoxStyle style={{ zIndex: "1", position: "relative" }}>
           <div className="title">청년광장</div>
           {CgBoxList}
         </CgBoxStyle>
       )}
       {DwData.flat().length > 7 && (
-        <DwBoxStyle>
+        <DwBoxStyle style={{ zIndex: "1", position: "relative" }}>
           <div className="title">대운동장</div>
           {DwBoxList}
         </DwBoxStyle>
       )}
       {CgBoxList.length < 1 && DwData.flat().length <= 7 && (
-        <div className="noResult">"오늘은 공연이 없어요"</div>
+        <div className="noResult" style={{ zIndex: "1", position: "relative" }}>
+          "오늘은 공연이 없어요"
+        </div>
       )}
       {/* {pushData(
         schedules,

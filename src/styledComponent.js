@@ -175,7 +175,7 @@ export const DayContainerDiv = styled.div`
   display: flex;
   justify-content: right;
   width: 100%;
-  margin: 0 5%;
+  margin-right: 10px;
   padding-top: 20px;
   padding-bottom: 10px;
 `;
@@ -421,6 +421,8 @@ export const FleaBlood = styled.img`
 
 //공연일정 divs
 export const MainScheduleDiv = styled.div`
+  min-height: 700px;
+  position: relative;
   .noResult {
     height: 40vh;
     line-height: 40vh;
@@ -428,10 +430,10 @@ export const MainScheduleDiv = styled.div`
   }
 
   .today {
-    height: 30px;
+    height: 50px;
     padding-left: 10%;
-    line-height: 30px;
-    font-size: 20px;
+    line-height: 20px;
+    font-size: 28px;
     font-weight: 100;
     text-align: left;
   }
@@ -538,7 +540,8 @@ export const RoundImgContainer = styled.div`
 `;
 export const SquareImgContainer = styled.div`
   width: calc(${(props) => props.width});
-  height: calc(${(props) => props.height});
+  /* height:calc(${(props) => props.height}); */
+  max-height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
