@@ -78,6 +78,7 @@ const Schedule = () => {
   const [selectedID, setSelectedID] = useState(1);
   const [CgData, setCgData] = useState([]);
   const [DwData, setDwData] = useState([]);
+  const [monArrData, setMonArrData] = useState("");
 
   const dayData = schedules.filter(
     (item) => dayConverter(item.day) === selectedDay
@@ -87,6 +88,11 @@ const Schedule = () => {
     const CGData = dayData.filter((item) => item.place === "청년광장");
     setCgData(CGData);
     const DWArray = dayData.filter((item) => item.place === "대운동장");
+    const MonArr = dayData.filter(
+      (item) => item.place === "청년광장 기청제"
+    )[0];
+    setMonArrData(MonArr);
+
     const DWData = [
       ["쉬는시간"],
       ["16:00-20:00"],
@@ -156,10 +162,27 @@ const Schedule = () => {
                 src={bloodStain}
                 style={{ position: "absolute", top: "20px", left: "25px" }}
               ></img>
-              <img
-                src={bloodStain}
-                style={{ position: "absolute", top: "65px", left: "27px" }}
-              ></img>
+              {team.id % 2 === 0 ? (
+                <img
+                  src={bloodStain}
+                  style={{
+                    position: "absolute",
+                    top: "80px",
+                    left: "30px",
+                    transform: "rotate(-45deg)",
+                  }}
+                ></img>
+              ) : (
+                <img
+                  src={bloodStain}
+                  style={{
+                    position: "absolute",
+                    top: "80px",
+                    left: "15px",
+                    transform: "rotate(45deg)",
+                  }}
+                ></img>
+              )}
             </div>
           </div>
 
@@ -263,6 +286,24 @@ const Schedule = () => {
           ]
         }
       </div>
+      {monArrData ? (
+        <CgBoxStyle style={{ zIndex: "1", position: "relative" }}>
+          <div className="title">청년광장 기청제</div>
+          <div className="bigContainer" key={monArrData.id}>
+            <RoundImgContainer height="220px" style={{ margin: "0px auto" }}>
+              <img
+                src={require(`../images/schedule/${monArrData.backgroundImage}`)}
+                alt="img"
+              />
+            </RoundImgContainer>
+            <br />
+            {monArrData.script}
+            <div className="name">{monArrData.name}</div>
+          </div>
+        </CgBoxStyle>
+      ) : (
+        <></>
+      )}
       {CgBoxList.length > 0 && (
         <CgBoxStyle style={{ zIndex: "1", position: "relative" }}>
           <div className="title">청년광장</div>
