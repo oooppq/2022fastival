@@ -100,7 +100,15 @@ export const pushData = (
   return result;
 };
 // prop으로 넘어온 id에 해당하는 data를 주어진 datas에서 찾아 반환
-export const findData = (datas, id) => {
+export const findFleaData = (datas, id, selectName) => {
+  for (let data of datas) {
+    if (data.id === id && data.name === selectName) {
+      return data;
+    }
+  }
+};
+
+export const findFoodData = (datas, id) => {
   for (let data of datas) {
     if (data.id === id) {
       return data;
