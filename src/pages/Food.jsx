@@ -101,13 +101,25 @@ const Food = () => {
 
       {/* 데이터 추가 */}
 
-      {pushData(
+      {/* {pushData(
         foods,
         FoodComponentDiv,
         selectedDay,
         setShowModal,
         setSelectedID
-      )}
+      )} */}
+      {foods.map((food) => {
+        return (
+          <FoodComponentDiv
+            key={food.id}
+            data={food}
+            setShowModal={setShowModal}
+            setSelectedID={setSelectedID}
+          >
+            {food.name}
+          </FoodComponentDiv>
+        );
+      })}
 
       {/* 이 모달 부분은 아영이가 만들걸로 바꿔야 할 듯 */}
       {showModal && (

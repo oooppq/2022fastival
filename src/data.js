@@ -214,7 +214,7 @@ export const schedules = [
   {
     id: 21,
     name: "트라이파시",
-    type: "트라이파시",
+    type: "연예인 공연",
     place: "대운동장",
     time: "20:05-20:35",
     day: 5,
