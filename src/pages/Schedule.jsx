@@ -27,6 +27,7 @@ import redHand from "../images/redHand.png";
 import backgroundImage from "../images/background.png";
 import { useEffect } from "react";
 import styled from "styled-components";
+import bloodStain from "../images/blood5.png";
 
 // default로 설정할 요일을 지정
 let defaultDay = getDefaultDay();
@@ -51,7 +52,7 @@ const DwBoxStyle = styled.div`
     .time {
       color: #620303;
       font-size: 28px;
-      font-weight: 600;
+      font-weight: 300;
     }
   }
 
@@ -138,7 +139,6 @@ const Schedule = () => {
       if (i === 0) {
         return "";
       }
-      console.log(team.backgroundImage);
       return (
         <TeamBlock key={team.id} even={i % 2 === 0}>
           <RoundImgContainer height="150px">
@@ -147,7 +147,20 @@ const Schedule = () => {
               alt="img"
             />
           </RoundImgContainer>
-          <img className="handImg" src={redHand} alt="a" />
+          <div>
+            <img className="handImg" src={redHand} alt="a" />
+            <div style={{ position: "relative" }}>
+              <img
+                src={bloodStain}
+                style={{ position: "absolute", top: "20px", left: "25px" }}
+              ></img>
+              <img
+                src={bloodStain}
+                style={{ position: "absolute", top: "65px", left: "27px" }}
+              ></img>
+            </div>
+          </div>
+
           <TeamName>
             <div className="name">{team.name}</div>
             <div className="text">{team.script}</div>
@@ -193,8 +206,10 @@ const Schedule = () => {
     });
     if (item.length > 1) {
       return (
-        <div className="timeBox" key={item.id}>
-          <div className="time">{item[0]}</div>
+        <div className="timeBox" key={item.id} style={{ position: "relative" }}>
+          <div className="time" style={{ color: "#DA0404", fontSize: "20px" }}>
+            {item[0]}
+          </div>
           {item[1] && item[1].type === "연예인 공연"
             ? SquareBlocks
             : item.length > 3
@@ -229,14 +244,17 @@ const Schedule = () => {
         }}
       ></div>
       <DayContainerDiv
-        style={{ fontSize: "25px", zIndex: "1", position: "relative" }}
+        style={{ fontSize: "22px", zIndex: "1", position: "relative" }}
       >
         {/* 요일을 추가, onclick event는 parameter 전달을 위해 화살표 함수로 구현 */}
         {pushDayDiv(selectedDay, (e) => {
           dayOnClick(setSelectedDay, e);
         })}
       </DayContainerDiv>
-      <div className="today" style={{ zIndex: "1", position: "relative" }}>
+      <div
+        className="today"
+        style={{ zIndex: "1", position: "relative", fontSize: "22px" }}
+      >
         {
           dataArray[
             ["일", "월", "화", "수", "목", "금", "토"].indexOf(selectedDay) - 1

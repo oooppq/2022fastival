@@ -86,7 +86,7 @@ export const schedules = [
   },
   {
     id: 7,
-    name: "GUESS WHO?",
+    name: "콜드",
     place: "대운동장",
     type: "연예인 공연",
     time: "21:00-22:00",

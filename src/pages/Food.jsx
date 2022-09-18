@@ -29,6 +29,7 @@ const Food = () => {
   const [selectedDay, setSelectedDay] = useState("월");
   const [showModal, setShowModal] = useState(false);
   const [selectedID, setSelectedID] = useState(1);
+  const [selectName, setSelectName] = useState("");
   return (
     <div style={{ position: "relative" }}>
       <div
@@ -91,6 +92,7 @@ const Food = () => {
                 setShowModal={setShowModal}
                 setSelectedID={setSelectedID}
                 Styled={FoodMapTableContainer}
+                setSelectName={setSelectName}
               />
             );
           })}

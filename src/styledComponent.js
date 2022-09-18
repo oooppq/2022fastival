@@ -120,7 +120,7 @@ export const BlackBg = styled.div`
   z-index: 1;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.67);
+  background-color: rgba(0, 0, 0, 0.45);
 `;
 
 // d-day를 위한 divs
@@ -173,11 +173,13 @@ export const EventPosterDiv = styled.div`
 // 요일을 위한 divs
 export const DayContainerDiv = styled.div`
   display: flex;
-  justify-content: right;
+  justify-content: center;
+  gap: 10px;
   width: 100%;
   margin-right: 10px;
-  padding-top: 20px;
-  padding-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  top: -10px;
 `;
 
 export const DayDiv = styled.div`
@@ -431,7 +433,7 @@ export const MainScheduleDiv = styled.div`
 
   .today {
     height: 50px;
-    padding-left: 10%;
+    padding-left: 20px;
     line-height: 20px;
     font-size: 28px;
     font-weight: 100;
@@ -532,7 +534,7 @@ export const RoundImgContainer = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 1000px;
-  border: solid 3px #620303;
+  border: solid 3px #a10c0c;
   overflow: hidden;
   img {
     width: 100%;
@@ -565,7 +567,7 @@ export const TeamName = styled.div`
   }
 `;
 export const TeamBlock = styled.div`
-  margin: 40px auto;
+  margin: 30px auto;
   width: 80%;
   display: flex;
   flex-direction: ${(props) => (props.even ? "row" : "row-reverse")};
