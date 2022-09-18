@@ -316,11 +316,18 @@ const Schedule = () => {
           {DwBoxList}
         </DwBoxStyle>
       )}
-      {CgBoxList.length < 1 && DwData.flat().length <= 7 && (
-        <div className="noResult" style={{ zIndex: "1", position: "relative" }}>
-          "오늘은 공연이 없어요"
-        </div>
-      )}
+      {CgBoxList.length < 1 &&
+        DwData.flat().length <= 7 &&
+        (monArrData ? (
+          <></>
+        ) : (
+          <div
+            className="noResult"
+            style={{ zIndex: "1", position: "relative" }}
+          >
+            "오늘은 공연이 없어요"
+          </div>
+        ))}
       {/* {pushData(
         schedules,
         ScheduleComponentDiv,
