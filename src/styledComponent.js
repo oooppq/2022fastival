@@ -101,7 +101,7 @@ export const SpecailLi = styled.li`
   font-size: 15px;
 
   @media only screen and (min-width: 380px) {
-    font-size: 1px;
+    font-size: 19px;
     width: 120px;
   }
 `;
