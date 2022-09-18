@@ -30,12 +30,58 @@ const Food = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedID, setSelectedID] = useState(1);
   return (
-    <>
-      <div style={{ textAlign: "right", marginRight: "10px" }}>
-        9.19~23 동일
+    <div style={{ position: "relative" }}>
+      <div
+        style={{
+          margin: "0px auto",
+          position: "absolute",
+          zIndex: "0",
+          height: "100%",
+          width: "100%",
+          backgroundColor: "rgba(0, 0, 0, 0.67)",
+        }}
+      ></div>
+      <div
+        style={{
+          zIndex: "2",
+          textAlign: "center",
+          width: "100%",
+          fontSize: "20px",
+          paddingBottom: "7px",
+        }}
+      >
+        <span style={{ zIndex: "2", position: "relative" }}>푸드트럭 지도</span>
+        <p
+          style={{
+            margin: "5px 0px",
+            fontSize: "12px",
+            zIndex: "2",
+            position: "relative",
+          }}
+        >
+          Mon~Fri (12:00~22:00)
+        </p>
       </div>
-      <div style={{ position: "relative" }}>
-        <Map src={foodmap}></Map>
+      <div
+        style={{
+          width: "320px",
+          backgroundImage: `url(${foodmap})`,
+          backgroundSize: "cover",
+          height: "250px",
+          position: "relative",
+          margin: "25px auto",
+        }}
+      >
+        <div
+          style={{
+            textAlign: "right",
+            top: "-23px",
+            right: "0px",
+            position: "absolute",
+          }}
+        >
+          9.19~23 동일
+        </div>
         <FoodMapContainer>
           {foods.map((food) => {
             return (
@@ -50,6 +96,7 @@ const Food = () => {
           })}
         </FoodMapContainer>
       </div>
+
       {/* 데이터 추가 */}
 
       {pushData(
@@ -68,7 +115,7 @@ const Food = () => {
           type={"food"}
         ></FoodModal>
       )}
-    </>
+    </div>
   );
 };
 

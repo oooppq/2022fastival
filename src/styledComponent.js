@@ -3,6 +3,8 @@ import styled from "styled-components";
 import background from "./images/background.png";
 import test_bg from "./images/test_bg.png";
 import nameTag from "./images/nametag.png";
+import fleaModalBg from "./images/flea/flea_modal.png";
+import foodModalBg from "./images/food/food_modal.png";
 
 // 메인 화면 외에 여백은 검게 처리하기 위한 가장 바깥쪽 div
 export const AppContainer = styled.div`
@@ -18,14 +20,24 @@ export const OuterDiv = styled.div`
   margin: 0 auto;
   text-align: center;
   background-color: black;
-  // background-image: url(${background});
-  background-size: 100%;
-  background-repeat: no-repeat;
   position: relative;
+`;
+
+export const OuterTestDiv = styled.div`
+  min-width: 320px;
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: black;
+  position: relative;
+  background: ${(props) =>
+    props.setStyled ? `url(${background}) no-repeat` : `none`};
+  background-size: ${(props) => (props.setStyled ? `100%` : `0`)};
 `;
 
 // home page의 기본 구성요소들
 export const HeaderDiv = styled.div`
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.67);
   padding-bottom: 10px;
 `;
@@ -64,7 +76,6 @@ export const Nav = styled.nav`
 
 // nav의 list들을 가로 정렬 하기 위한 ul
 export const FlexUl = styled.ul`
-  width: 100%;
   padding: 0;
   margin: 0;
   display: flex;
@@ -75,7 +86,24 @@ export const FlexUl = styled.ul`
 
 export const Li = styled.li`
   padding: 20px 3px;
-  font-size: 20px;
+  width: 100px;
+  font-size: 16px;
+
+  @media only screen and (min-width: 380px) {
+    width: 120px;
+    font-size: 22px;
+  }
+`;
+
+export const SpecailLi = styled.li`
+  padding: 20px 3px;
+  width: 100px;
+  font-size: 15px;
+
+  @media only screen and (min-width: 380px) {
+    font-size: 21px;
+    width: 130px;
+  }
 `;
 
 export const BlackBg = styled.div`
@@ -137,8 +165,7 @@ export const EventPosterDiv = styled.div`
 export const DayContainerDiv = styled.div`
   display: flex;
   justify-content: right;
-  // width: 100%;
-  width: 90%;
+  width: 100%;
   margin: 0 5%;
   padding-top: 20px;
   padding-bottom: 10px;
@@ -172,26 +199,26 @@ export const ModalInnerDiv = styled.div`
 //푸드트럭
 
 export const Map = styled.img`
-  width: 380px;
+  width: 320px;
   height: 300px;
   background: white;
   margin: 10px auto;
   margin-bottom: 10px;
-  border: 2px solid white;
 `;
 export const DescCard = styled.div`
+  position: relative;
+  z-index: 1;
   height: 74px;
-  width: 345px;
-  left: 35px;
-  top: 600px;
+  max-width: 320px;
   border-radius: 10px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
   margin: 0 auto;
   margin-bottom: 10px;
+  border: 2px solid white;
 `;
 
 export const DescCardNumber = styled.div`
@@ -206,13 +233,15 @@ export const DescCardNumber = styled.div`
 `;
 
 export const DescCardName = styled.div`
-  color: black;
-  width: 150px;
+  color: white;
+  width: 190px;
   text-align: start;
+  font-size: 20px;
 `;
 export const DescCardDetail = styled.div`
   width: 50;
-  color: black;
+  color: white;
+  font-size: 12px;
 `;
 
 export const FoodModalPopup = styled.div`
@@ -226,18 +255,18 @@ export const FoodModalPopup = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   border: 1px solid white;
-  background-color: black;
+  background-image: url(${foodModalBg});
+  background-repeat: no-repeat;
+  background-size: cover;
   z-index: 100;
 `;
 
 export const FoodImg = styled.img`
-  height: 218px;
-  width: 243px;
-  left: 88px;
-  top: 246px;
+  height: 200px;
+  width: 200px;
   border-radius: 6px;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 20px;
 `;
 
 export const FoodName = styled.div`
@@ -262,8 +291,8 @@ export const FoodNameTag = styled.div`
 export const FoodMapContainer = styled.div`
   display: flex;
   position: absolute;
-  top: 75px;
-  left: 60px;
+  top: 53px;
+  left: 23px;
   gap: 3px;
 
   > div:nth-child(5) {
@@ -285,8 +314,8 @@ export const FoodMapTableContainer = styled.div`
 // flea-market
 
 export const FleaMapTableContainer = styled.div`
-  width: 21px;
-  height: 21px;
+  width: 19px;
+  height: 19px;
   background-color: #a30000;
   border-radius: 5px;
   display: flex;
@@ -305,8 +334,8 @@ export const FleaModalPopup = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 1px solid white;
-  background-color: black;
+  background: url(${fleaModalBg}) no-repeat;
+  background-size: cover;
   z-index: 100;
 `;
 
@@ -323,69 +352,52 @@ export const FleaNameTag = styled.div`
 export const FleaMapContainerThr = styled.div`
   display: flex;
   position: absolute;
-  top: 114px;
-  left: 70px;
-  gap: 3px;
+  top: 90px;
+  left: 5px;
+  gap: 2px;
 
   > div:nth-child(13) {
-    margin-left: 6px;
+    margin-left: 3px;
   }
   > div:nth-child(n + 14) {
-    transform: translateX(-24px) translateY(25px);
+    margin-top: 22px;
+    margin-left: -22px;
   }
   > div:nth-child(n + 15) {
-    transform: translateX(-48px) translateY(50px);
+    margin-top: 44px;
+    margin-left: -20px;
   }
   > div:nth-child(n + 16) {
-    transform: translateX(-100px) translateY(50px);
+    margin-top: 44px;
+    margin-left: -42px;
   }
-  > div:nth-child(n + 17) {
-    transform: translateX(-148px) translateY(50px);
+  > div:nth-child(16) {
+    margin-top: 44px;
+    margin-left: -45px;
   }
-  > div:nth-child(n + 18) {
-    transform: translateX(-196px) translateY(50px);
+  > div:nth-child(27) {
+    margin-top: 53px;
+    margin-left: -40px;
   }
-  > div:nth-child(n + 19) {
-    transform: translateX(-244px) translateY(50px);
-  }
-  > div:nth-child(n + 20) {
-    transform: translateX(-292px) translateY(50px);
-  }
-  > div:nth-child(n + 21) {
-    transform: translateX(-340px) translateY(50px);
-  }
-  > div:nth-child(n + 22) {
-    transform: translateX(-388px) translateY(50px);
-  }
-  > div:nth-child(n + 23) {
-    transform: translateX(-436px) translateY(50px);
-  }
-  > div:nth-child(n + 24) {
-    transform: translateX(-484px) translateY(50px);
-  }
-  > div:nth-child(n + 25) {
-    transform: translateX(-532px) translateY(50px);
-  }
-  > div:nth-child(n + 26) {
-    transform: translateX(-580px) translateY(50px);
-  }
-  > div:nth-child(n + 27) {
-    transform: translateX(-625px) translateY(63px) rotate(-60deg);
-  }
-  > div:nth-child(n + 28) {
-    transform: translateX(-652px) translateY(86px) rotate(-90deg);
+  > div:nth-child(28) {
+    margin-top: 73px;
+    margin-left: -28px;
   }
 `;
 
 export const FleaMapContainerMon = styled.div`
   display: flex;
   position: absolute;
-  top: 115px;
-  left: 120px;
+  top: 90px;
+  left: 30px;
   gap: 3px;
 
   > div:nth-child(n + 11) {
-    transform: translateX(-240px) translateY(46px);
+    margin-top: 39px;
+    margin-left: -44px;
+  }
+  > div:nth-child(11) {
+    margin-left: -22px;
   }
 `;
 
@@ -395,12 +407,6 @@ export const FleaBlood = styled.img`
   top: -25px;
   left: -10px;
   z-index: 0;
-`;
-
-export const FleaEachDay = styled.div`
-  z-index: "3";
-  position: relative;
-  cursor: pointer;
 `;
 
 //공연일정 divs

@@ -6,15 +6,17 @@ import Home from "./pages/Home";
 import Flea from "./pages/Flea";
 import Food from "./pages/Food";
 import Schedule from "./pages/Schedule";
-import { OuterDiv, AppContainer } from "./styledComponent";
+import { OuterTestDiv, AppContainer } from "./styledComponent";
+import { useState } from "react";
 
 const App = () => {
+  const [styledCm, setStyledCm] = useState("");
   return (
     <Router>
       <AppContainer>
-        <OuterDiv>
+        <OuterTestDiv setStyled={styledCm}>
           {/* logo, nav를 포함한 header */}
-          <TestHeader />
+          <TestHeader setStyled={setStyledCm} />
 
           {/* 각각의 페이지로 라우팅 */}
           <Routes>
@@ -31,7 +33,7 @@ const App = () => {
 
           {/* 크레딧을 위한 footer */}
           <Footer />
-        </OuterDiv>
+        </OuterTestDiv>
       </AppContainer>
     </Router>
   );

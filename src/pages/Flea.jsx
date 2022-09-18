@@ -8,7 +8,6 @@ import {
   FleaMapContainerThr,
   FleaMapTableContainer,
   FleaBlood,
-  FleaEachDay,
 } from "../styledComponent";
 import { findData } from "../utils";
 import { FleaComponentDiv } from "./Elements";
@@ -29,67 +28,126 @@ const Flea = () => {
 
   return (
     <>
-      <DayContainerDiv>
-        {/* 요일을 추가, onclick event는 parameter 전달을 위해 화살표 함수로 구현 */}
-        {dayList.map((day) => {
-          return (
-            <div style={{ marginRight: "10px", position: "relative" }}>
-              <FleaEachDay
-                style={{ zIndex: "3", position: "relative", cursor: "pointer" }}
-                onClick={setDayHandler}
-              >
-                {day}
-              </FleaEachDay>
-              {currentDay === day ? <FleaBlood src={Blood}></FleaBlood> : <></>}
-            </div>
-          );
-        })}
-      </DayContainerDiv>
-      <div style={{ position: "relative" }}>
-        <Map src={fleamap}></Map>
-        {currentDay === "월~수" ? (
-          <FleaMapContainerMon>
-            {fleas.map((flea) => {
-              return currentDay === flea.date ? (
-                <MapTable
-                  key={flea.name}
-                  {...flea}
-                  setShowModal={setShowModal}
-                  setSelectedID={setSelectedID}
-                  Styled={FleaMapTableContainer}
-                />
-              ) : (
-                <></>
+      {/* 요일을 추가, onclick event는 parameter 전달을 위해 화살표 함수로 구현 */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "right",
+        }}
+      >
+        <div
+          style={{
+            margin: "0px auto",
+            position: "absolute",
+            zIndex: "0",
+            height: "100%",
+            width: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.67)",
+          }}
+        ></div>
+        <div
+          style={{
+            postion: "relative",
+            zIndex: "5",
+            textAlign: "center",
+            width: "100%",
+            fontSize: "20px",
+            marginBottom: "5px",
+          }}
+        >
+          <span>플리마켓 지도</span>
+          <p style={{ margin: "5px 0px", fontSize: "12px" }}>
+            Mon~Fri (10:00~22:00)
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div
+          style={{
+            width: "320px",
+            backgroundImage: `url(${fleamap})`,
+            backgroundSize: "cover",
+            height: "250px",
+            position: "relative",
+            margin: "25px auto",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              position: "absolute",
+              right: "0px",
+              top: "-25px",
+            }}
+          >
+            {dayList.map((day) => {
+              return (
+                <div
+                  key={day}
+                  style={{
+                    textAlign: "right",
+                    marginLeft: "15px",
+                    position: "relative",
+                  }}
+                >
+                  <div
+                    style={{
+                      zIndex: "3",
+                      cursor: "pointer",
+                      position: "relative",
+                    }}
+                    onClick={setDayHandler}
+                  >
+                    {day}
+                  </div>
+                  {currentDay === day ? (
+                    <FleaBlood src={Blood}></FleaBlood>
+                  ) : (
+                    <></>
+                  )}
+                </div>
               );
             })}
-          </FleaMapContainerMon>
-        ) : (
-          <FleaMapContainerThr>
-            {fleas.map((flea) => {
-              return currentDay === flea.date ? (
-                <MapTable
-                  key={flea.name}
-                  {...flea}
-                  setShowModal={setShowModal}
-                  setSelectedID={setSelectedID}
-                  Styled={FleaMapTableContainer}
-                />
-              ) : (
-                <></>
-              );
-            })}
-          </FleaMapContainerThr>
-        )}
+          </div>
+
+          {currentDay === "월~수" ? (
+            <FleaMapContainerMon>
+              {fleas.map((flea) => {
+                return currentDay === flea.date ? (
+                  <MapTable
+                    key={flea.name}
+                    {...flea}
+                    setShowModal={setShowModal}
+                    setSelectedID={setSelectedID}
+                    Styled={FleaMapTableContainer}
+                  />
+                ) : (
+                  <></>
+                );
+              })}
+            </FleaMapContainerMon>
+          ) : (
+            <FleaMapContainerThr>
+              {fleas.map((flea) => {
+                return currentDay === flea.date ? (
+                  <MapTable
+                    key={flea.name}
+                    {...flea}
+                    setShowModal={setShowModal}
+                    setSelectedID={setSelectedID}
+                    Styled={FleaMapTableContainer}
+                  />
+                ) : (
+                  <></>
+                );
+              })}
+            </FleaMapContainerThr>
+          )}
+        </div>
       </div>
 
       {/* 데이터 추가 */}
-      {/* {pushData(
-        fleas,
-        FleaComponentDiv,
-        selectedDay,
-        setShowModal,
-        setSelectedID
-      )} */}
       {fleas.map((flea) => {
         return currentDay === flea.date ? (
           <FleaComponentDiv

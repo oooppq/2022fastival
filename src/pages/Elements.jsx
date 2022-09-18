@@ -40,25 +40,22 @@ export const EventComponentDiv = (props) => {
 
 export const FleaComponentDiv = (props) => {
   return (
-    // <div
-    //   onClick={() => {
-    //     props.setShowModal(true);
-    //     props.setSelectedID(props.data.id);
-    //   }}
-    // >
-    //   {props.data.name}
-    // </div>
     <DescCard
       onClick={() => {
         props.setShowModal(true);
         props.setSelectedID(props.data.id);
       }}
     >
-      <DescCardNumber>
-        <div>{props.data.id}</div>
-      </DescCardNumber>
-      <DescCardName>{props.data.name}</DescCardName>
-      <DescCardDetail>+</DescCardDetail>
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <DescCardNumber>
+          <div>{props.data.id}</div>
+        </DescCardNumber>
+        <DescCardName style={{ marginLeft: "8px" }}>
+          {props.data.name}
+        </DescCardName>
+      </div>
+
+      <DescCardDetail>더보기</DescCardDetail>
     </DescCard>
   );
 };
@@ -71,11 +68,15 @@ export const FoodComponentDiv = (props) => {
         props.setSelectedID(props.data.id);
       }}
     >
-      <DescCardNumber>
-        <div>{props.data.id}</div>
-      </DescCardNumber>
-      <DescCardName>{props.data.name}</DescCardName>
-      <DescCardDetail>+</DescCardDetail>
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <DescCardNumber>
+          <div>{props.data.id}</div>
+        </DescCardNumber>
+        <DescCardName style={{ marginLeft: "8px" }}>
+          {props.data.name}
+        </DescCardName>
+      </div>
+      <DescCardDetail>더보기</DescCardDetail>
     </DescCard>
   );
 };
@@ -93,22 +94,21 @@ export const ScheduleComponentDiv = (props) => {
         props.setSelectedID(props.data.id);
       }}
     >
-
       {/* 날짜 */}
-      <ScheduleDate>
-        {content}
-      </ScheduleDate>
+      <ScheduleDate>{content}</ScheduleDate>
       <ScheduleimgBox>
         <SchedulePlace>{props.data.place}</SchedulePlace>
         <ScheduleType>{props.data.type}</ScheduleType>
         <ScheduleTime>{props.data.time}</ScheduleTime>
         <Scheduleimg>
-          <img src={props.data.backgroundImage} alt="backgroundImage" width="100%"/>
+          <img
+            src={props.data.backgroundImage}
+            alt="backgroundImage"
+            width="100%"
+          />
         </Scheduleimg>
         <Schedulenametag>{props.data.name} </Schedulenametag>
       </ScheduleimgBox>
     </div>
-
-
   );
 };
