@@ -62,10 +62,14 @@ export const pushData = (
   Element,
   selectedDay,
   setShowModal,
-  setSelectedID
+  setSelectedID,
+  scrollToDW,
+  scrollToCG
 ) => {
   let result = [];
-  for (let data of datas) {
+  console.log('scdw', scrollToDW)
+  for (let [idx, data] of datas.entries()) {
+    console.log(idx)
     if (typeof data.day === "object") {
       //플리마켓에는 day가 array라서 이렇게 했습니다...
       for (let d of data.day) {
@@ -84,6 +88,12 @@ export const pushData = (
         }
       }
     } else if (dayConverter(data.day) === selectedDay || selectedDay === "") {
+      if(idx===1) {
+        result.push(<div ref={scrollToCG}>청년광장</div>)
+      }
+      if(idx===5) {
+        result.push(<div ref={scrollToDW}>대운동장</div>)
+      }
       result.push(
         <Element
           key={data.id}

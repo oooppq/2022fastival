@@ -1,8 +1,17 @@
 import React, { useState } from "react";
 import { schedules } from "../data";
 // import Modal from "./Modal";
-import { DayContainerDiv, MainScheduleDiv, ScheduleContainerDIv, ScheduleSpan, Scheduleimg, ScheduleimgBox, Schedulenametag } from "../styledComponent";
+import {
+  DayContainerDiv,
+  MainScheduleDiv,
+  ScheduleContainerDIv,
+  ScheduleSpan,
+  Scheduleimg,
+  ScheduleimgBox,
+  Schedulenametag,
+} from "../styledComponent";
 import { ScheduleComponentDiv } from "./Elements";
+import useScroll from "../useScroll";
 import {
   dayConverter,
   pushDayDiv,
@@ -18,11 +27,20 @@ let defaultDay = getDefaultDay();
 const Schedule = () => {
   // 요일 선택을 반영하기 위해 useState로 구현
   //defaultDay를 하면 아무것도 안나와서 기본값을 1로 조정
+  const { scrollToa, onMoveTo } = useScroll();
+
+  // const { scrollToCG, onMoveToCG } = useScroll();
+  // const { scrollToDW, onMoveToDW } = useScroll();
   const [selectedDay, setSelectedDay] = useState(dayConverter(1));
   const [showModal, setShowModal] = useState(false);
   const [selectedID, setSelectedID] = useState(1);
   return (
     <MainScheduleDiv>
+      <div onClick={onMoveTo}>이걸 누르면? 청년광장</div>
+
+      {/* <div onClick={onMoveToCG}>이걸 누르면? 청년광장</div> */}
+      {/* <div onClick={onMoveToDW}>이걸 누르면? 대운동장</div> */}
+
       <DayContainerDiv>
         {/* 요일을 추가, onclick event는 parameter 전달을 위해 화살표 함수로 구현 */}
         {pushDayDiv(selectedDay, (e) => {
@@ -34,7 +52,6 @@ const Schedule = () => {
       </ScheduleContainerDIv>
       {/* 데이터 추가 */}
 
-      
       {/* {showModal && (
         <Modal
           setShowModal={setShowModal}
@@ -42,14 +59,16 @@ const Schedule = () => {
         ></Modal>
       )} */}
 
-
-       {pushData(
+      {pushData(
         schedules,
         ScheduleComponentDiv,
         selectedDay,
         setShowModal,
-        setSelectedID,
+        setSelectedID
+        // scrollToDW,
+        // scrollToCG
       )}
+      <div ref={scrollToa}>여기로 옵니다.</div>
     </MainScheduleDiv>
   );
 };
