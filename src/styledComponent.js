@@ -120,7 +120,7 @@ export const BlackBg = styled.div`
   z-index: 1;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.67);
+  background-color: rgba(0, 0, 0, 0.45);
 `;
 
 // d-day를 위한 divs
@@ -173,16 +173,22 @@ export const EventPosterDiv = styled.div`
 // 요일을 위한 divs
 export const DayContainerDiv = styled.div`
   display: flex;
-  justify-content: right;
+  justify-content: center;
+  gap: 10px;
   width: 100%;
-  margin: 0 5%;
-  padding-top: 20px;
-  padding-bottom: 10px;
+  margin-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  top: -10px;
 `;
 
 export const DayDiv = styled.div`
+<<<<<<< HEAD
+  margin: 3px;
+=======
   padding-right: 7px;
   margin: 1px;
+>>>>>>> 33c0993eb0c90b2118075c2956f5018a1541c057
 `;
 
 // 모달 포지셔닝을 위한 divs
@@ -422,7 +428,22 @@ export const FleaBlood = styled.img`
 
 //공연일정 divs
 export const MainScheduleDiv = styled.div`
-  background-color: black;
+  min-height: 700px;
+  position: relative;
+  .noResult {
+    height: 40vh;
+    line-height: 40vh;
+    font-size: 25px;
+  }
+
+  .today {
+    height: 50px;
+    padding-left: 20px;
+    line-height: 20px;
+    font-size: 28px;
+    font-weight: 100;
+    text-align: left;
+  }
 `;
 export const ScheduleContainerDIv = styled.div``;
 export const ScheduleSpan = styled.div`
@@ -508,4 +529,61 @@ export const ItemImg = styled.img`
   height: 250px;
   object-fit: cover;
   z-index: 1;
+`;
+
+//schedule page resources
+export const RoundImgContainer = styled.div`
+  width: calc(${(props) => props.height});
+  height: calc(${(props) => props.height});
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1000px;
+  border: solid 3px #a10c0c;
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
+`;
+export const SquareImgContainer = styled.div`
+  width: calc(${(props) => props.width});
+  /* height:calc(${(props) => props.height}); */
+  max-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 3px #620303;
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
+`;
+
+export const TeamName = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  .name {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .text {
+    font-size: 10px;
+  }
+`;
+export const TeamBlock = styled.div`
+  margin: 30px auto;
+  width: 80%;
+  display: flex;
+  flex-direction: ${(props) => (props.even ? "row" : "row-reverse")};
+  justify-content: flex-start;
+  align-items: center;
+  img {
+    display: block;
+  }
+  .handImg {
+    width: 35px;
+    height: 35px;
+    margin: 0 15px;
+  }
 `;
