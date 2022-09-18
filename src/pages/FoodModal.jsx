@@ -17,7 +17,12 @@ const FoodModal = (props) => {
       }}
     >
       <span
-        style={{ position: "absolute", right: "10px", top: "10px" }}
+        style={{
+          position: "absolute",
+          right: "10px",
+          top: "10px",
+          color: "black",
+        }}
         class="material-symbols-outlined"
       >
         close
