@@ -95,7 +95,7 @@ export const Li = styled.li`
   font-size: 16px;
 
   @media only screen and (min-width: 380px) {
-    width: 120px;
+    width: 114px;
     font-size: 22px;
   }
 `;
