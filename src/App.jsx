@@ -12,7 +12,8 @@ import Header from "./pages/Header";
 
 const App = () => {
   const [styledCm, setStyledCm] = useState("");
-  const navFlag = document.location.href.split("/").slice(-1)[0] != "";
+  const navFlag = document.location.href.split("/").slice(-1) !== "";
+
   return (
     <Router>
       <AppContainer>

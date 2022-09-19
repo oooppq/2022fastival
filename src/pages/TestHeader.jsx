@@ -11,22 +11,37 @@ import {
 } from "../styledComponent";
 import logo from "../images/header/header-logo.png";
 import Blood from "../images/blood.png";
+import { assertDeclareTypeAlias } from "@babel/types";
 
 const Header = ({ setStyled }) => {
   // nav에 들어갈 요소들을 추가해줌
   // 각각의 url에 진입하면 해당하는 menu component의 background가 red가 되도록 해놓음
   // 핏자국 background image 갖도록 수정 필요
-  const nowUrl = document.location.href.split("/").slice(-1)[0];
+  // let nowUrl = document.location.href.split("/").slice(-1)[0];
+  const [nowUrl, setNowUrl] = useState(
+    document.location.href.split("/").slice(-1)[0]
+  );
   const [showBlood, setShowBlood] = useState("");
   const handleBlood = (e) => {
     setShowBlood(e.target.innerText);
     setStyled(e.target.innerText);
+    let txt = e.target.innerText;
+    if (txt === "플리마켓/마당") {
+      setNowUrl("flea");
+    } else if (txt === "푸드트럭") {
+      setNowUrl("food");
+    } else if (txt === "공연일정") {
+      setNowUrl("schedule");
+    }
+    console.log(nowUrl);
   };
 
   const hideBlood = () => {
     setShowBlood("");
     setStyled("");
+    setNowUrl("");
   };
+
   return (
     <HeaderDiv>
       <StyledLink to="/">
