@@ -31,8 +31,9 @@ export const OuterTestDiv = styled.div`
   background-color: black;
   position: relative;
   background: ${(props) =>
-    props.setStyled ? `url(${background}) no-repeat` : `none`};
-  background-size: ${(props) => (props.setStyled ? `100%` : `0`)};
+    props.setStyled || props.navFlag ? `url(${background}) no-repeat` : `none`};
+  background-size: ${(props) =>
+    props.setStyled || props.navFlag ? `100%` : `0`};
 `;
 
 // home page의 기본 구성요소들

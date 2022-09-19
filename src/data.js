@@ -104,7 +104,7 @@ export const schedules = [
   },
   {
     id: 9,
-    name: "이승연",
+    name: "이승원",
     date: "9.23 Fri",
     place: "청년광장",
     type: "버스킹 공연",
