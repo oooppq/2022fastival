@@ -8,13 +8,15 @@ import Food from "./pages/Food";
 import Schedule from "./pages/Schedule";
 import { OuterTestDiv, AppContainer } from "./styledComponent";
 import { useState } from "react";
+import Header from "./pages/Header";
 
 const App = () => {
   const [styledCm, setStyledCm] = useState("");
+  const navFlag = document.location.href.split("/").slice(-1)[0] !== "";
   return (
     <Router>
       <AppContainer>
-        <OuterTestDiv setStyled={styledCm}>
+        <OuterTestDiv setStyled={styledCm} navFlag={navFlag}>
           {/* logo, nav를 포함한 header */}
           <TestHeader setStyled={setStyledCm} />
 
