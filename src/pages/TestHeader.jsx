@@ -33,7 +33,6 @@ const Header = ({ setStyled }) => {
     } else if (txt === "공연일정") {
       setNowUrl("schedule");
     }
-    console.log(nowUrl);
   };
 
   const hideBlood = () => {
