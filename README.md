@@ -1,3 +1,8 @@
+사이트 미리보기
+<img width="290" alt="스크린샷 2023-04-08 오후 1 31 17" src="https://user-images.githubusercontent.com/81559230/230703176-873b743e-9712-49de-b96d-2656c7c09cda.png">
+<img width="236" alt="스크린샷 2023-04-08 오후 1 32 49" src="https://user-images.githubusercontent.com/81559230/230703228-3ed5309b-dc2f-4478-a4ad-42660580c034.png">
+<img width="185" alt="스크린샷 2023-04-08 오후 1 33 22" src="https://user-images.githubusercontent.com/81559230/230703238-fa541a79-2569-4dcc-8c33-a6cfa0f59050.png">
+
 ## 개발환경 세팅
 
 $ git clone https://github.com/oooppq/2022fastival.git
