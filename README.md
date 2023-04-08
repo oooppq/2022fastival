@@ -1,8 +1,6 @@
 사이트 미리보기
 
-<img width="260" alt="스크린샷 2023-04-08 오후 1 37 24" src="https://user-images.githubusercontent.com/81559230/230703365-33c857ba-a1c6-483f-82bb-02b0bd663dd6.png">
-<img width="269" alt="스크린샷 2023-04-08 오후 1 37 52" src="https://user-images.githubusercontent.com/81559230/230703378-4e0edc98-3845-42d4-904c-52a296f3cefc.png">
-<img width="270" alt="스크린샷 2023-04-08 오후 1 38 13" src="https://user-images.githubusercontent.com/81559230/230703390-cc5fa4e3-1c0c-44fa-a59d-67fe6acaa639.png">
+<img width="260" alt="스크린샷 2023-04-08 오후 1 37 24" src="https://user-images.githubusercontent.com/81559230/230703365-33c857ba-a1c6-483f-82bb-02b0bd663dd6.png"><img width="269" alt="스크린샷 2023-04-08 오후 1 37 52" src="https://user-images.githubusercontent.com/81559230/230703378-4e0edc98-3845-42d4-904c-52a296f3cefc.png"><img width="270" alt="스크린샷 2023-04-08 오후 1 38 13" src="https://user-images.githubusercontent.com/81559230/230703390-cc5fa4e3-1c0c-44fa-a59d-67fe6acaa639.png">
 
 
 ## 개발환경 세팅
